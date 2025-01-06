@@ -1,13 +1,37 @@
 "use client";
 
+import SkillsSection from "@/components/skills";
 import Image from "next/image";
 import bgimage from "../../public/bgimage.svg";
 import me from "../../public/me.svg";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const glowElements = document.querySelectorAll(
+        ".glow-effect"
+      ) as NodeListOf<HTMLElement>;
+      glowElements.forEach((glowElement) => {
+        const rect = glowElement.parentElement?.getBoundingClientRect();
+        if (rect) {
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          glowElement.style.left = `${x}px`;
+          glowElement.style.top = `${y}px`;
+        }
+      });
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    return () => document.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
-    <main className="grid grid-cols-12 mx-[70px] h-screen">
-      <div className="col-span-12 h-[50vh] gap-0 flex items-center justify-center bg-url[('../public/bgimage.png')] bg-cover bg-no-repeat">
+    <main className="w-full relative">
+      <div className="h-[50vh] flex items-center justify-center bg-url[('../public/bgimage.png')] bg-cover bg-no-repeat relative">
+        <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
         <Image
           src={bgimage}
           alt="bgimage"
@@ -18,73 +42,66 @@ export default function Home() {
           JESSE VAN LUXEMBURG
         </h1>
       </div>
-      <div className="col-span-12 h-[50vh] grid grid-cols-2 -mx-[70px]">
-        <div className="bg-[#202020] h-[50vh]">
+      <div className="h-[50vh] flex">
+        <div className="w-1/2 bg-[#191919] h-[50vh] relative">
+          <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
           <Image
             src={me}
             alt="me"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover z-10 relative"
             quality={100}
           />
         </div>
-        <div
-          className="bg-[#202020] flex flex-col items-start justify-start gap-4 p-8 relative w-[50vw] h-[50vh] overflow-hidden"
-          onMouseMove={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const glowElement = e.currentTarget.querySelector(
-              ".glow-effect"
-            ) as HTMLElement;
-            if (glowElement) {
-              glowElement.style.left = `${x}px`;
-              glowElement.style.top = `${y}px`;
-            }
-          }}
-        >
-          {/* Animated glow effect that follows cursor */}
-          <div
-            className="glow-effect absolute pointer-events-none w-[300px] h-[300px]"
-            style={{
-              background:
-                "radial-gradient(circle at center, rgba(110,183,184,0.35) 0%, rgba(110,183,184,0.2 ) 40%, rgba(110,183,184,0) 70%)",
-              transform: "translate(-50%, -50%)",
-              mixBlendMode: "screen",
-              filter: "blur(8px)",
-              transition: "all 0.2s ease-out",
-            }}
-          />
+        <div className="w-1/2 bg-[#191919] flex flex-col items-start justify-start gap-4 p-8 relative h-[50vh] overflow-hidden">
+          <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
 
           {/* Navigation buttons */}
-          <button className="bg-[#202020] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#202020] transition-colors w-[200px] relative z-10">
+          <button className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
             Projects
           </button>
-          <button className="bg-[#202020] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#202020] transition-colors w-[200px] relative z-10">
+          <button className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
             About
           </button>
-          <button className="bg-none text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg border border-white hover:bg-white hover:text-[#202020] transition-colors w-[200px] relative z-10">
+          <button className="bg-none text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg border border-white hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
             Contact
           </button>
-
-          <style jsx>{`
-            @keyframes pulse {
-              0% {
-                transform: translate(-50%, -50%) scale(0.95);
-              }
-              50% {
-                transform: translate(-50%, -50%) scale(1.05);
-              }
-              100% {
-                transform: translate(-50%, -50%) scale(0.95);
-              }
-            }
-            .glow-effect {
-              animation: pulse 2s infinite ease-in-out;
-            }
-          `}</style>
         </div>
       </div>
+      <div
+        className="w-5/6 mx-auto h-[1px] my-16 rounded-full"
+        style={{
+          background: "linear-gradient(90deg, #134A51 0%, #8DB4B3 100%)",
+        }}
+      />
+      <SkillsSection />
+
+      <style jsx global>{`
+        .glow-effect {
+          background: radial-gradient(
+            circle at center,
+            rgba(110, 183, 184, 0.35) 0%,
+            rgba(110, 183, 184, 0.2) 40%,
+            rgba(110, 183, 184, 0) 70%
+          );
+          transform: translate(-50%, -50%);
+          mix-blend-mode: screen;
+          filter: blur(8px);
+          transition: all 0.2s ease-out;
+          animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: translate(-50%, -50%) scale(0.95);
+          }
+          50% {
+            transform: translate(-50%, -50%) scale(1.05);
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(0.95);
+          }
+        }
+      `}</style>
     </main>
   );
 }
