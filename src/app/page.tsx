@@ -28,8 +28,10 @@ export default function Home() {
     return () => document.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // Home
   return (
     <main className="w-full relative">
+      {/* Banner */}
       <div className="h-[50vh] flex items-center justify-center bg-url[('../public/bgimage.png')] bg-cover bg-no-repeat relative">
         <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
         <Image
@@ -42,7 +44,9 @@ export default function Home() {
           JESSE VAN LUXEMBURG
         </h1>
       </div>
+      {/* Image and navigation */}
       <div className="h-[50vh] flex">
+        {/* Image */}
         <div className="w-1/2 bg-[#191919] h-[50vh] relative">
           <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
           <Image
@@ -52,10 +56,9 @@ export default function Home() {
             quality={100}
           />
         </div>
-        <div className="w-1/2 bg-[#191919] flex flex-col items-start justify-start gap-4 p-8 relative h-[50vh] overflow-hidden">
+        {/* Navigation */}
+        <div className="w-1/2 bg-[#19191973] flex flex-col items-start justify-start gap-4 p-8 relative h-[50vh] overflow-hidden">
           <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
-
-          {/* Navigation buttons */}
           <button className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
             Projects
           </button>
@@ -67,12 +70,16 @@ export default function Home() {
           </button>
         </div>
       </div>
+
+      {/* Line */}
       <div
         className="w-5/6 mx-auto h-[1px] my-16 rounded-full"
         style={{
           background: "linear-gradient(90deg, #134A51 0%, #8DB4B3 100%)",
         }}
       />
+
+      {/* Skills */}
       <SkillsSection />
 
       <style jsx global>{`
