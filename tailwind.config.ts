@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import type { PluginAPI } from 'tailwindcss/types/config'
 
 export default {
   content: [
@@ -12,7 +13,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        'syne': ['Syne Variable', 'sans-serif']
+      }
     },
   },
-  plugins: [],
 } satisfies Config;
