@@ -1,6 +1,7 @@
 "use client";
 
 import SkillsSection from "@/components/skills";
+import ProjectsSection from "@/components/projects";
 import Image from "next/image";
 import bgimage from "../../public/bgimage.svg";
 import me from "../../public/me.svg";
@@ -40,9 +41,14 @@ export default function Home() {
           quality={100}
           className="absolute w-full h-[50vh] object-cover z-10"
         />
-        <h1 className="text-center font-['Syne'] font-extrabold text-[50px] text-white z-20 relative">
-          JESSE VAN LUXEMBURG
-        </h1>
+        <div className="flex flex-col items-center z-20 relative">
+          <h1 className="text-center font-['Syne'] font-extrabold text-[50px] text-white">
+            JESSE VAN LUXEMBURG
+          </h1>
+          <p className="text-center font-['Syne'] mr-0 ml-auto font-regular text-white text-md">
+            STUDENT @ FONTYSICT
+          </p>
+        </div>
       </div>
       {/* Image and navigation */}
       <div className="h-[50vh] flex">
@@ -81,6 +87,17 @@ export default function Home() {
 
       {/* Skills */}
       <SkillsSection />
+
+      {/* Line */}
+      <div
+        className="w-5/6 mx-auto h-[1.5px] my-16 rounded-full"
+        style={{
+          background: "linear-gradient(90deg, #8DB4B3 0%, #134A51 100%)",
+        }}
+      />
+
+      {/* Projects */}
+      <ProjectsSection />
 
       <style jsx global>{`
         .glow-effect {

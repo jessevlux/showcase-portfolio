@@ -1,17 +1,17 @@
 export default function SkillsSection() {
   const skills = [
-    { name: "Figma", category: "Design tool", icon: "/figma-icon.svg" },
-    { name: "Photoshop", category: "Design tool", icon: "/photoshop-icon.svg" },
-    { name: "HTML", category: "Development", icon: "/html-icon.svg" },
-    { name: "CSS", category: "Development", icon: "/css-icon.svg" },
+    { name: "Figma", category: "Design tool", icon: "/figma.svg" },
+    { name: "Photoshop", category: "Design tool", icon: "/photoshop.svg" },
+    { name: "HTML", category: "Development", icon: "/html.svg" },
+    { name: "CSS", category: "Development", icon: "/css.svg" },
     {
       name: "JavaScript",
       category: "Development",
-      icon: "/javascript-icon.svg",
+      icon: "/javascript.svg",
     },
-    { name: "Next.js", category: "React Framework", icon: "/nextjs-icon.svg" },
-    { name: "Tailwind", category: "CSS Framework", icon: "/tailwind-icon.svg" },
-    { name: "GIT", category: "Version control", icon: "/git-icon.svg" },
+    { name: "Next.js", category: "React Framework", icon: "/nextjs.svg" },
+    { name: "Tailwind", category: "CSS Framework", icon: "/tailwind.svg" },
+    { name: "GIT", category: "Version control", icon: "/git.svg" },
   ];
 
   return (
