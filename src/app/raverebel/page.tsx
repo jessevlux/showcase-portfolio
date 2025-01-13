@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
+  const sectionsRef = useRef<HTMLDivElement[]>([]);
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const glowElements = document.querySelectorAll(
@@ -21,17 +23,19 @@ export default function Home() {
     };
 
     document.addEventListener("mousemove", handleMouseMove);
-    return () => document.removeEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
-  // Home
   return (
     <main className="w-full relative">
       <div className="container mx-auto px-[70px] relative z-0">
         <div className="grid grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">
           <div className="col-span-12 col-start-2 col-end-12">
             <div className="flex justify-between items-center">
-              <h1 className="text-left font-['Syne'] font-extrabold text-[50px] text-2xl text-white my-8">
+              <h1 className="text-left font-['Syne'] font-extrabold text-3xl text-white my-8">
                 RAVEREBEL
               </h1>
               <div className="w-[60px] h-full">
@@ -53,8 +57,9 @@ export default function Home() {
           background: "linear-gradient(90deg, #134A51 0%, #8DB4B3 100%)",
         }}
       />
-      <div className="container mx-auto px-[70px] mt-8">
-        <div className="grid grid-cols-12 gap-[20px]">
+
+      <div className="container mx-auto px-[70px] mt-20">
+        <div className="grid grid-cols-12 gap-[20px] items-center mb-40">
           <div className="col-span-5 col-start-2">
             <h3 className="font-['Syne'] font-semibold text-2xl text-white mb-4">
               What is RaveRebel?
@@ -66,7 +71,18 @@ export default function Home() {
               multiple options for different people attending festivals.
             </p>
           </div>
-          <div className="col-span-5 col-start-7 text-right">
+          <div className="col-span-4 col-start-8">
+            {/* Add your image here */}
+            <div className="w-full aspect-square bg-gray-800 rounded-lg"></div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-[20px] items-center">
+          <div className="col-span-4 col-start-2">
+            {/* Add your image here */}
+            <div className="w-full aspect-square bg-gray-800 rounded-lg"></div>
+          </div>
+          <div className="col-span-5 col-start-7">
             <h3 className="font-['Syne'] font-semibold text-2xl text-white mb-4">
               Why?
             </h3>
