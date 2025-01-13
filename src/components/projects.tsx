@@ -1,4 +1,10 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 export default function ProjectsSection() {
+  const router = useRouter();
+
   const projects = [
     {
       title: "RAVEREBEL",
@@ -7,6 +13,7 @@ export default function ProjectsSection() {
       image: "/raverebel.svg",
       date: "05-2024",
       tags: ["Design", "Branding"],
+      path: "/raverebel",
     },
     {
       title: "UPENDO",
@@ -14,6 +21,7 @@ export default function ProjectsSection() {
       image: "/project2.png",
       date: "09-2024",
       tags: ["UI/UX Design", "Web Development"],
+      path: "/upendo",
     },
     {
       title: "MARKETING NEWS WEBSITE",
@@ -21,6 +29,7 @@ export default function ProjectsSection() {
       image: "/project3.jpg",
       date: "11-2024",
       tags: ["UI/UX Design", "Web Development"],
+      path: "/marketing-news",
     },
     {
       title: "BEFIT",
@@ -28,6 +37,7 @@ export default function ProjectsSection() {
       image: "/project4.jpg",
       date: "01-2025",
       tags: ["UI/UX Design", "Mobile App"],
+      path: "/befit",
     },
   ];
 
@@ -41,6 +51,7 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <div
               key={project.title}
+              onClick={() => router.push(project.path)}
               className={`
                 col-span-12
                 md:col-span-6
@@ -54,15 +65,15 @@ export default function ProjectsSection() {
                   <img
                     src={project.image}
                     alt={`${project.title} preview`}
-                    className="h-full w-full object-cover rounded-lg relative z-0"
+                    className="h-full w-full object-fill rounded-lg relative z-0"
                   />
                 </div>
                 <div className="flex flex-col relative z-0">
                   <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-lg font-['Syne'] font-semibold text-white group-hover:underline relative z-0">
+                    <h3 className="text-md font-['Syne'] font-semibold text-white -mt-2 group-hover:underline relative z-0">
                       {project.title}
                     </h3>
-                    <span className="text-sm font-['Syne'] text-zinc-400">
+                    <span className="text-sm font-['Syne'] -mt-2 text-zinc-400">
                       {project.date}
                     </span>
                   </div>
