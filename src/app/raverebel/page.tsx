@@ -1,29 +1,48 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-import img1 from "/public/1.png";
-import img2 from "/public/2.png";
-import img3 from "/public/3.png";
-import img4 from "/public/4.png";
-import img5 from "/public/5.png";
-import img6 from "/public/6.png";
-import img7 from "/public/7.png";
-import img8 from "/public/8.png";
-import img9 from "/public/9.png";
-import img10 from "/public/10.png";
-import img11 from "/public/11.png";
-import img12 from "/public/12.png";
+import img1 from "../../../public/1.svg";
+import img2 from "../../../public/2.svg";
+import img3 from "../../../public/3.svg";
+import img4 from "../../../public/4.svg";
+import img5 from "../../../public/5.svg";
+import img6 from "../../../public/6.svg";
+import img7 from "../../../public/7.svg";
+import img8 from "../../../public/8.svg";
+import img9 from "../../../public/9.svg";
+import img10 from "../../../public/10.svg";
+import img11 from "../../../public/11.svg";
+
+const images = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+];
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? 11 : prevIndex - 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 11 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   useEffect(() => {
@@ -49,6 +68,10 @@ export default function Home() {
       document.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+
+  const getImageIndex = (offset: number) => {
+    return (currentIndex + offset + images.length) % images.length;
+  };
 
   return (
     <main className="w-full relative">
@@ -131,38 +154,56 @@ export default function Home() {
       </div>
 
       {/* Carousel */}
-      <div className="grid mt-20 grid-cols-12">
-        <div className="col-span-10 col-start-2">
-          <div className="carousel-container relative w-full h-[400px] overflow-hidden rounded-lg bg-[#191919]">
-            <div className="carousel flex transition-transform duration-500 ease-in-out">
-              {[...Array(12)].map((_, index) => (
+      <div className="w-full mt-20">
+        <div className="w-full">
+          <div className="carousel-container relative w-full h-[500px] overflow-hidden pb-8 bg-[#141414]">
+            <h2 className="ml-[165px] mt-8 -mb-8 text-white font-['Syne'] font-semibold text-3xl">
+              Designs
+            </h2>
+            <div className="carousel flex items-center justify-center h-full">
+              {[-1, 0, 1].map((offset) => (
                 <div
-                  key={index}
-                  className="carousel-item flex-shrink-0 w-full h-full flex justify-center items-center"
-                  style={{
-                    transform: `translateX(-${currentIndex * 100}%)`,
-                  }}
+                  key={offset}
+                  className={`carousel-item flex-shrink-0 transition-all duration-300 ease-in-out ${
+                    offset === 0
+                      ? "w-2/3 h-96 z-20"
+                      : "w-1/5 h-80 opacity-50 absolute"
+                  } ${
+                    offset === -1
+                      ? "left-[25%] transform -translate-x-3/3"
+                      : offset === 1
+                      ? "right-[25%] transform translate-x-3/3"
+                      : ""
+                  }`}
                 >
                   <img
-                    src={`/${index + 1}.png`}
-                    alt={`Image ${index + 1}`}
-                    className="w-64 h-full object-cover rounded-lg"
+                    src={
+                      images[getImageIndex(offset)].src || "/placeholder.svg"
+                    }
+                    alt={`Image ${getImageIndex(offset) + 1}`}
+                    className="w-full h-full object-contain rounded-2xl"
                   />
                 </div>
               ))}
             </div>
-            <button
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/20 text-white p-2 rounded-full"
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute left-[165px] top-[250px] transform -translate-y-1/2 bg-white/20 text-white rounded-full z-30"
               onClick={prevSlide}
             >
-              &#10094;
-            </button>
-            <button
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/20 text-white p-2 rounded-full"
+              <ChevronLeft className="h-6 w-6" />
+              <span className="sr-only">Previous slide</span>
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute right-[165px] top-[250px] transform -translate-y-1/2 bg-white/20 text-white rounded-full z-30"
               onClick={nextSlide}
             >
-              &#10095;
-            </button>
+              <ChevronRight className="h-6 w-6" />
+              <span className="sr-only">Next slide</span>
+            </Button>
           </div>
         </div>
       </div>
@@ -176,7 +217,6 @@ export default function Home() {
           transition: transform 0.5s ease-in-out;
         }
         .carousel-item {
-          min-width: 100%;
           backface-visibility: hidden;
         }
       `}</style>
