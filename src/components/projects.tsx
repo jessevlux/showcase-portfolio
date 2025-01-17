@@ -10,7 +10,7 @@ export default function ProjectsSection() {
       title: "RAVEREBEL",
       description:
         "I've designed my own clothing that's related to festivals. ",
-      image: "/raverebel.svg",
+      image: "/raverebel1.png",
       date: "05-2024",
       tags: ["Design", "Branding"],
       path: "/raverebel",
@@ -18,7 +18,7 @@ export default function ProjectsSection() {
     {
       title: "UPENDO",
       description: "Lorem ipsum is simply dummy text of the printing industry",
-      image: "/project2.png",
+      image: "/upendo.png",
       date: "09-2024",
       tags: ["UI/UX Design", "Web Development"],
       path: "/upendo",
@@ -26,7 +26,7 @@ export default function ProjectsSection() {
     {
       title: "MARKETING NEWS WEBSITE",
       description: "Lorem ipsum is simply dummy text of the printing industry",
-      image: "/project3.jpg",
+      image: "/aimtoday.png",
       date: "11-2024",
       tags: ["UI/UX Design", "Web Development"],
       path: "/marketing-news",
@@ -34,7 +34,7 @@ export default function ProjectsSection() {
     {
       title: "BEFIT",
       description: "Lorem ipsum is simply dummy text of the printing industry",
-      image: "/project4.jpg",
+      image: "/befit.png",
       date: "01-2025",
       tags: ["UI/UX Design", "Mobile App"],
       path: "/befit",
@@ -65,7 +65,7 @@ export default function ProjectsSection() {
                   <img
                     src={project.image}
                     alt={`${project.title} preview`}
-                    className="h-full w-full object-fill rounded-lg relative z-0"
+                    className="h-full w-full object-fit relative z-0"
                   />
                 </div>
                 <div className="flex flex-col relative z-0">
