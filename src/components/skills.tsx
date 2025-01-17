@@ -16,8 +16,24 @@ export default function SkillsSection() {
 
   return (
     <section className="w-full relative z-0">
+      {/* About */}
+      <section className="w-full relative z-0">
+        <div className="container mx-auto px-[70px] relative z-0">
+          <h2 className="ml-[190px] mb-6 -mt-3 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
+            ABOUT
+          </h2>
+          <p className="ml-[190px] max-w-[500px] col-start-1 text-zinc-400 text-md font-['Syne']">
+            My name is Jesse van Luxemburg. I’m a 20 year old student at Fontys
+            Tilburg (ICT & Media Design).
+          </p>
+          <p className="ml-[190px] max-w-[500px] mt-2 col-start-1 text-zinc-400 text-md font-['Syne']">
+            I chose this study because I’ve always liked creating visual things
+            visual things to entertain myself.
+          </p>
+        </div>
+      </section>
       <div className="container mx-auto px-[70px] relative z-0">
-        <h2 className="ml-[190px] mb-8 -mt-3 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
+        <h2 className="ml-[190px] mb-6 mt-8 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
           SKILLS
         </h2>
         <div className="grid grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">

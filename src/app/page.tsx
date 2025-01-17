@@ -66,7 +66,7 @@ export default function Home() {
         <div className="w-1/2 bg-[#19191973] flex flex-col items-start justify-start gap-4 p-8 relative h-[50vh] overflow-hidden">
           <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
           <button className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
-            Skills
+            About
           </button>
           <button className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
             Projects
@@ -107,16 +107,51 @@ export default function Home() {
         }}
       />
 
-      {/* About */}
-      <section className="w-full relative z-0">
+      {/* Contact */}
+      <section className="w-full relative mb-16 z-0">
         <div className="container mx-auto px-[70px] relative z-0">
-          <h2 className="ml-[190px] mb-6 -mt-3 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
-            ABOUT & CONTACT
+          <h2 className="ml-[190px] mb-6 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
+            CONTACT
           </h2>
-          <p className="ml-[190px] max-w-[500px] col-start-1 text-white text-md font-['Syne']">
-            My name is Jesse van Luxemburg. I’m a 20 year old student at Fontys
-            Tilburg (ICT & Media Design).<br></br> I chose this study because
-            I’ve always liked creating visual things to entertain myself.
+          <p className="ml-[190px] max-w-[500px] col-start-1 text-zinc-400 text-md font-['Syne']">
+            Want to work with me? <br></br>
+            <br></br>
+            <span className="flex items-center -mt-4 text-zinc-400 gap-2">
+              <svg
+                className="text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              jessevanluxemburg@outlook.com
+            </span>
+            <br></br>
+            <span className="flex items-center text-zinc-400 -mt-4 gap-2">
+              <svg
+                className="text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              +31 6 57 51 38 64
+            </span>
           </p>
         </div>
       </section>

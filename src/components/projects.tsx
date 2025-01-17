@@ -8,16 +8,15 @@ export default function ProjectsSection() {
   const projects = [
     {
       title: "RAVEREBEL",
-      description:
-        "I've designed my own clothing that's related to festivals. ",
+      description: "Designing my own clothing that's related to festivals.",
       image: "/raverebel1.png",
       date: "05-2024",
-      tags: ["Design", "Branding"],
+      tags: ["Design"],
       path: "/raverebel",
     },
     {
       title: "UPENDO",
-      description: "Lorem ipsum is simply dummy text of the printing industry",
+      description: "Client group project for 2manydots.",
       image: "/upendo.png",
       date: "09-2024",
       tags: ["UI/UX Design", "Web Development"],
@@ -25,15 +24,15 @@ export default function ProjectsSection() {
     },
     {
       title: "MARKETING NEWS WEBSITE",
-      description: "Lorem ipsum is simply dummy text of the printing industry",
+      description: "Client group project for 2manydots.",
       image: "/aimtoday.png",
       date: "11-2024",
-      tags: ["UI/UX Design", "Web Development"],
+      tags: ["UI/UX Design", "Web Development", "Branding"],
       path: "/marketing-news",
     },
     {
       title: "BEFIT",
-      description: "Lorem ipsum is simply dummy text of the printing industry",
+      description: "Mobile app that combines social media and fitness.",
       image: "/befit.png",
       date: "01-2025",
       tags: ["UI/UX Design", "Mobile App"],
@@ -77,7 +76,7 @@ export default function ProjectsSection() {
                       {project.date}
                     </span>
                   </div>
-                  <p className="text-sm text-white opacity-80 -mt-2 font-regular font-['Syne'] relative z-0">
+                  <p className="text-sm text-zinc-400 opacity-80 -mt-2 font-regular font-['Syne'] relative z-0">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-3 mb-3">
