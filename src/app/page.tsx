@@ -110,12 +110,13 @@ export default function Home() {
       {/* About */}
       <section className="w-full relative z-0">
         <div className="container mx-auto px-[70px] relative z-0">
-          <h2 className="ml-[190px] mb-8 -mt-3 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
+          <h2 className="ml-[190px] mb-6 -mt-3 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
             ABOUT & CONTACT
           </h2>
-          <p className="ml-[190px] text-white text-md font-['Syne']">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quos.
+          <p className="ml-[190px] max-w-[500px] col-start-1 text-white text-md font-['Syne']">
+            My name is Jesse van Luxemburg. I’m a 20 year old student at Fontys
+            Tilburg (ICT & Media Design).<br></br> I chose this study because
+            I’ve always liked creating visual things to entertain myself.
           </p>
         </div>
       </section>
