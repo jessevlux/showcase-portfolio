@@ -36,7 +36,7 @@ export default function Home() {
           <div className="col-span-12 col-start-2 col-end-12">
             <div className="flex justify-between items-center">
               <h1 className="text-left font-['Syne'] font-extrabold text-3xl text-white my-8">
-                UPENDO
+                AIMTODAY
               </h1>
             </div>
           </div>
@@ -51,22 +51,23 @@ export default function Home() {
         }}
       />
 
-      {/* What is Upendo? */}
+      {/* What is AimToday? */}
       <div className="container mx-auto px-[70px] mt-8">
         <div className="grid grid-cols-12 gap-[20px] items-center mb-20">
           <div className="col-span-5 col-start-2">
             <h3 className="font-['Syne'] font-semibold text-2xl text-white mb-4">
-              What is Upendo?
+              What is AIMTODAY?
             </h3>
             <p className="text-white/80 font-['Syne'] leading-relaxed">
-              Upendo is a group project we did for 2manydots. 2manydots wanted
-              to create a new company where you can get clear insights and data
-              for your own website. We've created the website that shows all of
-              Upendo's services.
+              AIMTODAY is a group project we did for 2manydots. 2manydots wanted
+              a marketing news website. For this project we didn't have any
+              guidelines. No company name, no brandguide, etc. So we've done the
+              branding and created the website with the name AIMTODAY, which
+              stands for Ads, Insights & Marketing Today.
             </p>
             <p className="text-white/80 mt-2 font-['Syne'] leading-relaxed">
-              I participated in the UI/UX design and the frontend and the
-              frontend development.
+              I participated in the branding, UI/UX design and the frontend and
+              the frontend development.
             </p>
           </div>
           <div className="col-span-4 z-10 col-start-9">

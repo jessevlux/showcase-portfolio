@@ -28,7 +28,7 @@ export default function ProjectsSection() {
       image: "/aimtoday.png",
       date: "11-2024",
       tags: ["UI/UX Design", "Web Development", "Branding"],
-      path: "/marketing-news",
+      path: "/aimtoday",
     },
     {
       title: "BEFIT",

@@ -65,13 +65,34 @@ export default function Home() {
         {/* Navigation */}
         <div className="w-1/2 bg-[#19191973] flex flex-col items-start justify-start gap-4 p-8 relative h-[50vh] overflow-hidden">
           <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
-          <button className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
+          <button
+            onClick={() => {
+              document
+                .getElementById("skills")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10"
+          >
             About
           </button>
-          <button className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
+          <button
+            onClick={() => {
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10"
+          >
             Projects
           </button>
-          <button className="bg-none text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg border border-white hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
+          <button
+            onClick={() => {
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="bg-none text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg border border-white hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10"
+          >
             Contact
           </button>
         </div>
@@ -80,6 +101,7 @@ export default function Home() {
       {/* Line */}
       <div
         className="w-5/6 mx-auto h-[1px] my-16 rounded-full"
+        id="skills"
         style={{
           background: "linear-gradient(90deg, #134A51 0%, #8DB4B3 100%)",
         }}
@@ -91,6 +113,7 @@ export default function Home() {
       {/* Line */}
       <div
         className="w-5/6 mx-auto h-[1.5px] my-16 rounded-full"
+        id="projects"
         style={{
           background: "linear-gradient(90deg, #8DB4B3 0%, #134A51 100%)",
         }}
@@ -108,7 +131,7 @@ export default function Home() {
       />
 
       {/* Contact */}
-      <section className="w-full relative mb-16 z-0">
+      <section className="w-full relative mb-16 z-0" id="contact">
         <div className="container mx-auto px-[70px] relative z-0">
           <h2 className="ml-[190px] mb-6 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
             CONTACT
