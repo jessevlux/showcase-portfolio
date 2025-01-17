@@ -1,8 +1,31 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import img1 from "/public/1.png";
+import img2 from "/public/2.png";
+import img3 from "/public/3.png";
+import img4 from "/public/4.png";
+import img5 from "/public/5.png";
+import img6 from "/public/6.png";
+import img7 from "/public/7.png";
+import img8 from "/public/8.png";
+import img9 from "/public/9.png";
+import img10 from "/public/10.png";
+import img11 from "/public/11.png";
+import img12 from "/public/12.png";
 
 export default function Home() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? 11 : prevIndex - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 11 ? 0 : prevIndex + 1));
+  };
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const glowElements = document.querySelectorAll(
@@ -56,8 +79,9 @@ export default function Home() {
         }}
       />
 
-      <div className="container mx-auto px-[70px] mt-20">
-        <div className="grid grid-cols-12 gap-[20px] items-center mb-40">
+      {/* What is RaveRebel? */}
+      <div className="container mx-auto px-[70px] mt-8">
+        <div className="grid grid-cols-12 gap-[20px] items-center mb-20">
           <div className="col-span-5 col-start-2">
             <h3 className="font-['Syne'] font-semibold text-2xl text-white mb-4">
               What is RaveRebel?
@@ -78,6 +102,7 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Why? */}
         <div
           className="grid grid-cols-12 container mx-auto gap-[20px] items-center"
           data-aos="fade-up"
@@ -87,7 +112,7 @@ export default function Home() {
             <img
               src="/mockup.png"
               alt="RaveRebel mockup"
-              className="w-full aspect-square object-cover rounded-lg"
+              className="w-full object-cover scale-110 ml-5 rounded-lg"
             />
           </div>
           <div className="col-span-5 col-start-7">
@@ -104,6 +129,57 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Carousel */}
+      <div className="grid mt-20 grid-cols-12">
+        <div className="col-span-10 col-start-2">
+          <div className="carousel-container relative w-full h-[400px] overflow-hidden rounded-lg bg-[#191919]">
+            <div className="carousel flex transition-transform duration-500 ease-in-out">
+              {[...Array(12)].map((_, index) => (
+                <div
+                  key={index}
+                  className="carousel-item flex-shrink-0 w-full h-full flex justify-center items-center"
+                  style={{
+                    transform: `translateX(-${currentIndex * 100}%)`,
+                  }}
+                >
+                  <img
+                    src={`/${index + 1}.png`}
+                    alt={`Image ${index + 1}`}
+                    className="w-64 h-full object-cover rounded-lg"
+                  />
+                </div>
+              ))}
+            </div>
+            <button
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/20 text-white p-2 rounded-full"
+              onClick={prevSlide}
+            >
+              &#10094;
+            </button>
+            <button
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/20 text-white p-2 rounded-full"
+              onClick={nextSlide}
+            >
+              &#10095;
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .carousel-container {
+          perspective: 1000px;
+        }
+        .carousel {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+          min-width: 100%;
+          backface-visibility: hidden;
+        }
+      `}</style>
 
       <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
       <style jsx global>{`
