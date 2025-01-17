@@ -66,10 +66,10 @@ export default function Home() {
         <div className="w-1/2 bg-[#19191973] flex flex-col items-start justify-start gap-4 p-8 relative h-[50vh] overflow-hidden">
           <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
           <button className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
-            Projects
+            Skills
           </button>
           <button className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
-            About
+            Projects
           </button>
           <button className="bg-none text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg border border-white hover:bg-white hover:text-[#191919] transition-colors w-[200px] relative z-10">
             Contact
@@ -98,6 +98,27 @@ export default function Home() {
 
       {/* Projects */}
       <ProjectsSection />
+
+      {/* Line */}
+      <div
+        className="w-5/6 mx-auto h-[1.5px] my-16 rounded-full"
+        style={{
+          background: "linear-gradient(90deg, #8DB4B3 0%, #134A51 100%)",
+        }}
+      />
+
+      {/* About */}
+      <section className="w-full relative z-0">
+        <div className="container mx-auto px-[70px] relative z-0">
+          <h2 className="ml-[190px] mb-8 -mt-3 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
+            ABOUT & CONTACT
+          </h2>
+          <p className="ml-[190px] text-white text-md font-['Syne']">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+            quos.
+          </p>
+        </div>
+      </section>
 
       <style jsx global>{`
         .glow-effect {
