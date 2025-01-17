@@ -3,8 +3,6 @@
 import { useEffect, useRef } from "react";
 
 export default function Home() {
-  const sectionsRef = useRef<HTMLDivElement[]>([]);
-
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const glowElements = document.querySelectorAll(
