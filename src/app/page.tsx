@@ -46,7 +46,7 @@ export default function Home() {
             JESSE VAN LUXEMBURG
           </h1>
           <p className="text-center font-['Syne'] mr-0 ml-auto font-regular text-white text-md">
-            STUDENT @ FONTYSICT
+            STUDENT @ FONTYS ICT
           </p>
         </div>
       </div>

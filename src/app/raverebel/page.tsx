@@ -38,7 +38,7 @@ export default function Home() {
               <h1 className="text-left font-['Syne'] font-extrabold text-3xl text-white my-8">
                 RAVEREBEL
               </h1>
-              <div className="w-[60px] h-full">
+              <div className="w-[60px] hidden h-full">
                 <img
                   src="/raverebel logo.svg"
                   alt="RAVEREBEL logo"
@@ -71,16 +71,26 @@ export default function Home() {
               multiple options for different people attending festivals.
             </p>
           </div>
-          <div className="col-span-4 col-start-8">
-            {/* Add your image here */}
-            <div className="w-full aspect-square bg-gray-800 rounded-lg"></div>
+          <div className="col-span-4 z-10 col-start-9">
+            <img
+              src="/raverebel.png"
+              alt="RaveRebel brand"
+              className="w-64 h-full object-cover rounded-lg"
+            />
           </div>
         </div>
 
-        <div className="grid grid-cols-12 gap-[20px] items-center">
+        <div
+          className="grid grid-cols-12 container mx-auto gap-[20px] items-center"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <div className="col-span-4 col-start-2">
-            {/* Add your image here */}
-            <div className="w-full aspect-square bg-gray-800 rounded-lg"></div>
+            <img
+              src="/mockup.png"
+              alt="RaveRebel mockup"
+              className="w-full aspect-square object-cover rounded-lg"
+            />
           </div>
           <div className="col-span-5 col-start-7">
             <h3 className="font-['Syne'] font-semibold text-2xl text-white mb-4">
