@@ -1,5 +1,6 @@
 "use client";
 
+import BackBtn from "@/components/backbtn";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -31,11 +32,13 @@ export default function Home() {
 
   return (
     <main className="w-full relative">
-      <div className="container mx-auto px-[70px] relative z-0">
-        <div className="grid grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">
-          <div className="col-span-12 col-start-2 col-end-12">
+      <BackBtn />
+
+      <div className="container mx-auto px-4 md:px-[70px] relative z-0">
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">
+          <div className="col-span-4 md:col-span-12 md:col-start-2 md:col-end-12">
             <div className="flex justify-between items-center">
-              <h1 className="text-left font-['Syne'] font-extrabold text-3xl text-white my-8">
+              <h1 className="text-left font-['Syne'] font-extrabold text-2xl md:text-3xl text-white my-4 md:my-8">
                 BEFIT
               </h1>
             </div>
@@ -45,20 +48,20 @@ export default function Home() {
 
       {/* Line */}
       <div
-        className="w-5/6 mx-auto h-[1px] rounded-full"
+        className="w-[90%] md:w-5/6 mx-auto h-[1px] rounded-full"
         style={{
           background: "linear-gradient(90deg, #134A51 0%, #8DB4B3 100%)",
         }}
       />
 
       {/* What is BeFit? */}
-      <div className="container mx-auto px-[70px] mt-8">
-        <div className="grid grid-cols-12 gap-[20px] items-center mb-20">
-          <div className="col-span-5 col-start-2">
-            <h3 className="font-['Syne'] font-semibold text-2xl text-white mb-4">
+      <div className="container mx-auto px-4 md:px-[70px] mt-8">
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] items-start md:items-center mb-20">
+          <div className="col-span-4 md:col-span-5 md:col-start-2">
+            <h3 className="font-['Syne'] font-semibold text-xl md:text-2xl text-white mb-4">
               What is BeFit?
             </h3>
-            <p className="text-white/80 font-['Syne'] leading-relaxed">
+            <p className="text-white/80 font-['Syne'] text-sm md:text-base leading-relaxed">
               BeFit is an personal project I've done for school. I wanted to
               create a mobile app that combines social media and fitness. The
               app is inspired on BeReal. The reason BeReal fell off is because
@@ -66,16 +69,16 @@ export default function Home() {
               can show your fitness progress to your friends and share what
               you're proud of.
             </p>
-            <p className="text-white/80 mt-2 font-['Syne'] leading-relaxed">
+            <p className="text-white/80 mt-2 font-['Syne'] text-sm md:text-base leading-relaxed">
               The app is still in progress, but I've already created the
               branding and the app design with a POC.
             </p>
           </div>
-          <div className="col-span-4 z-10 col-start-9">
+          <div className="col-span-4 md:col-span-4 md:col-start-9 mt-8 md:mt-0">
             <img
               src="/upendo.png"
               alt="RaveRebel brand"
-              className="w-64 h-full object-cover rounded-lg"
+              className="w-full md:w-64 h-full object-cover rounded-lg"
             />
           </div>
         </div>
@@ -92,9 +95,16 @@ export default function Home() {
         .carousel-item {
           backface-visibility: hidden;
         }
+
+        @media (max-width: 768px) {
+          .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+        }
       `}</style>
 
-      <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
+      <div className="glow-effect absolute pointer-events-none w-[200px] md:w-[300px] h-[200px] md:h-[300px] z-0" />
       <style jsx global>{`
         .glow-effect {
           background: radial-gradient(

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 import img1 from "../../../public/1.svg";
 import img2 from "../../../public/2.svg";
@@ -15,6 +16,7 @@ import img8 from "../../../public/8.svg";
 import img9 from "../../../public/9.svg";
 import img10 from "../../../public/10.svg";
 import img11 from "../../../public/11.svg";
+import BackBtn from "@/components/backbtn";
 
 const images = [
   img1,
@@ -63,10 +65,7 @@ export default function Home() {
     };
 
     document.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
+    return () => document.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   const getImageIndex = (offset: number) => {
@@ -75,20 +74,14 @@ export default function Home() {
 
   return (
     <main className="w-full relative">
-      <div className="container mx-auto px-[70px] relative z-0">
-        <div className="grid grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">
-          <div className="col-span-12 col-start-2 col-end-12">
+      <BackBtn />
+      <div className="container mx-auto px-4 md:px-[70px] relative z-0">
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">
+          <div className="col-span-4 md:col-span-12 md:col-start-2 md:col-end-12">
             <div className="flex justify-between items-center">
-              <h1 className="text-left font-['Syne'] font-extrabold text-3xl text-white my-8">
+              <h1 className="text-left font-['Syne'] font-extrabold text-2xl md:text-3xl text-white my-4 md:my-8">
                 RAVEREBEL
               </h1>
-              <div className="w-[60px] hidden h-full">
-                <img
-                  src="/raverebel logo.svg"
-                  alt="RAVEREBEL logo"
-                  className="w-full h-full object-contain"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -96,53 +89,48 @@ export default function Home() {
 
       {/* Line */}
       <div
-        className="w-5/6 mx-auto h-[1px] rounded-full"
+        className="w-[90%] md:w-5/6 mx-auto h-[1px] rounded-full"
         style={{
           background: "linear-gradient(90deg, #134A51 0%, #8DB4B3 100%)",
         }}
       />
 
       {/* What is RaveRebel? */}
-      <div className="container mx-auto px-[70px] mt-8">
-        <div className="grid grid-cols-12 gap-[20px] items-center mb-20">
-          <div className="col-span-5 col-start-2">
-            <h3 className="font-['Syne'] font-semibold text-2xl text-white mb-4">
+      <div className="container mx-auto px-4 md:px-[70px] mt-8">
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] items-start md:items-center mb-20">
+          <div className="col-span-4 md:col-span-5 md:col-start-2">
+            <h3 className="font-['Syne'] font-semibold text-xl md:text-2xl text-white mb-4">
               What is RaveRebel?
             </h3>
-            <p className="text-white/80 font-['Syne'] leading-relaxed">
+            <p className="text-white/80 font-['Syne'] text-sm md:text-base leading-relaxed">
               RaveRebel is a clothing brand I created with the aim of appealing
               to the festival community, particularly those into the harder
               styles. From stylish designs to ones with a message, there are
               multiple options for different people attending festivals.
             </p>
           </div>
-          <div className="col-span-4 z-10 col-start-9">
+          <div className="col-span-4 w-[80%] md:col-span-4 md:col-start-9 mt-8 md:mt-0">
             <img
               src="/raverebel.png"
               alt="RaveRebel brand"
-              className="w-64 h-full object-cover rounded-lg"
+              className="w-full md:w-64 h-full object-cover rounded-lg"
             />
           </div>
         </div>
-
         {/* Why? */}
-        <div
-          className="grid grid-cols-12 container mx-auto gap-[20px] items-center"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          <div className="col-span-4 col-start-2">
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] items-start md:items-center mb-20">
+          <div className="col-span-4 md:col-span-4 md:col-start-2">
             <img
               src="/mockup.png"
               alt="RaveRebel mockup"
-              className="w-full object-cover scale-110 ml-5 rounded-lg"
+              className="w-full object-cover scale-110 ml-0 md:ml-5 rounded-lg"
             />
           </div>
-          <div className="col-span-5 col-start-7">
-            <h3 className="font-['Syne'] font-semibold text-2xl text-white mb-4">
+          <div className="col-span-4 md:col-span-5 md:col-start-7 mt-8 md:mt-0">
+            <h3 className="font-['Syne'] font-semibold text-xl md:text-2xl text-white mb-4">
               Why?
             </h3>
-            <p className="text-white/80 font-['Syne'] leading-relaxed">
+            <p className="text-white/80 font-['Syne'] text-sm md:text-base leading-relaxed">
               When I attend festivals, I often see people wearing clothing from
               their own festival related brands. This always seemed like a cool
               idea to me. I had the chance to create my own project at school,
@@ -156,8 +144,8 @@ export default function Home() {
       {/* Carousel */}
       <div className="w-full mt-20">
         <div className="w-full">
-          <div className="carousel-container relative w-full h-[500px] overflow-hidden pb-8 bg-[#141414]">
-            <h2 className="ml-[165px] mt-8 -mb-8 text-white font-['Syne'] font-semibold text-3xl">
+          <div className="carousel-container relative w-full h-[400px] md:h-[500px] overflow-hidden pb-8 bg-[#141414]">
+            <h2 className="ml-4 md:ml-[165px] mt-8 -mb-8 text-white font-['Syne'] font-semibold text-2xl md:text-3xl">
               Designs
             </h2>
             <div className="carousel flex items-center justify-center h-full">
@@ -166,13 +154,13 @@ export default function Home() {
                   key={offset}
                   className={`carousel-item flex-shrink-0 transition-all duration-300 ease-in-out ${
                     offset === 0
-                      ? "w-2/3 h-96 z-20"
-                      : "w-1/5 h-80 opacity-50 absolute"
+                      ? "w-4/5 md:w-2/3 h-72 md:h-96 z-20"
+                      : "w-1/4 md:w-1/5 h-60 md:h-80 opacity-50 absolute"
                   } ${
                     offset === -1
-                      ? "left-[25%] transform -translate-x-3/3"
+                      ? "left-[15%] md:left-[25%] transform -translate-x-3/3"
                       : offset === 1
-                      ? "right-[25%] transform translate-x-3/3"
+                      ? "right-[15%] md:right-[25%] transform translate-x-3/3"
                       : ""
                   }`}
                 >
@@ -189,7 +177,7 @@ export default function Home() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute left-[165px] top-[250px] transform -translate-y-1/2 bg-white/20 text-white rounded-full z-30"
+              className="absolute left-4 md:left-[165px] top-[250px] transform -translate-y-1/2 bg-white/20 text-white rounded-full z-30"
               onClick={prevSlide}
             >
               <ChevronLeft className="h-6 w-6" />
@@ -198,7 +186,7 @@ export default function Home() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-[165px] top-[250px] transform -translate-y-1/2 bg-white/20 text-white rounded-full z-30"
+              className="absolute right-4 md:right-[165px] top-[250px] transform -translate-y-1/2 bg-white/20 text-white rounded-full z-30"
               onClick={nextSlide}
             >
               <ChevronRight className="h-6 w-6" />
@@ -208,6 +196,23 @@ export default function Home() {
         </div>
       </div>
 
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+          let lastScrollY = window.scrollY;
+          const nav = document.getElementById('navBtn');
+
+          window.addEventListener('scroll', () => {
+            if (window.scrollY < lastScrollY) { // scrolling up
+              nav.style.opacity = '1';
+            } else { // scrolling down
+              nav.style.opacity = '0';
+            }
+            lastScrollY = window.scrollY;
+          });
+        `,
+        }}
+      />
       <style jsx>{`
         .carousel-container {
           perspective: 1000px;
@@ -219,9 +224,16 @@ export default function Home() {
         .carousel-item {
           backface-visibility: hidden;
         }
+
+        @media (max-width: 768px) {
+          .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+        }
       `}</style>
 
-      <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
+      <div className="glow-effect absolute pointer-events-none w-[200px] md:w-[300px] h-[200px] md:h-[300px] z-0" />
       <style jsx global>{`
         .glow-effect {
           background: radial-gradient(
