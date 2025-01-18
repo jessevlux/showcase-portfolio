@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import BackBtn from "@/components/backbtn";
 
 import img1 from "../../../public/1.svg";
 import img2 from "../../../public/2.svg";
@@ -15,7 +17,6 @@ import img8 from "../../../public/8.svg";
 import img9 from "../../../public/9.svg";
 import img10 from "../../../public/10.svg";
 import img11 from "../../../public/11.svg";
-import BackBtn from "@/components/backbtn";
 
 const images = [
   img1,
@@ -109,9 +110,11 @@ export default function Home() {
             </p>
           </div>
           <div className="col-span-4 w-[80%] md:col-span-4 md:col-start-9 mt-8 md:mt-0">
-            <img
+            <Image
               src="/raverebel.png"
               alt="RaveRebel brand"
+              width={256}
+              height={256}
               className="w-full md:w-64 h-full object-cover rounded-lg"
             />
           </div>
@@ -119,9 +122,11 @@ export default function Home() {
         {/* Why? */}
         <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] items-start md:items-center mb-20">
           <div className="col-span-4 md:col-span-4 md:col-start-2">
-            <img
+            <Image
               src="/mockup.png"
               alt="RaveRebel mockup"
+              width={400}
+              height={400}
               className="w-full object-cover scale-110 ml-0 md:ml-5 rounded-lg"
             />
           </div>
@@ -163,11 +168,13 @@ export default function Home() {
                       : ""
                   }`}
                 >
-                  <img
+                  <Image
                     src={
                       images[getImageIndex(offset)].src || "/placeholder.svg"
                     }
                     alt={`Image ${getImageIndex(offset) + 1}`}
+                    width={500}
+                    height={500}
                     className="w-full h-full object-contain rounded-2xl"
                   />
                 </div>
