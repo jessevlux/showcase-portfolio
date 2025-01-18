@@ -146,12 +146,9 @@ export default function Home() {
       </div>
 
       {/* Carousel */}
-      <div className="w-full mt-20">
+      <div className="w-full">
         <div className="w-full">
-          <div className="carousel-container relative w-full h-[400px] md:h-[500px] overflow-hidden pb-8 bg-[#141414]">
-            <h2 className="ml-4 md:ml-[165px] mt-8 -mb-8 text-white font-['Syne'] font-semibold text-2xl md:text-3xl">
-              Designs
-            </h2>
+          <div className="carousel-container relative w-full h-[400px] md:h-[500px] overflow-hidden bg-[#141414]">
             <div className="carousel flex items-center justify-center h-full">
               {[-1, 0, 1].map((offset) => (
                 <div

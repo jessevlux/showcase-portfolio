@@ -9,11 +9,11 @@ export default function BackBtn() {
       className="fixed top-8 left-8 z-50 transition-opacity duration-300"
     >
       <Image
-        src="/back.svg"
+        src="/navbtn.svg"
         alt="Back to home"
         width={32}
         height={32}
-        className="w-8 h-8"
+        className="w-12 h-12"
       />
     </Link>
   );
