@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 import img1 from "../../../public/1.svg";
 import img2 from "../../../public/2.svg";
