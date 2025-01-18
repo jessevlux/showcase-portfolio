@@ -61,14 +61,10 @@ export default function Home() {
             </h3>
             <p className="text-white/80 font-['Syne'] text-sm md:text-base leading-relaxed">
               AIMTODAY is a group project we did for 2manydots. 2manydots wanted
-              a marketing news website. For this project we didn't have any
-              guidelines. No company name, no brandguide, etc. So we've done the
-              branding and created the website with the name AIMTODAY, which
+              a marketing news website. For this project we {"didn't"} have any
+              guidelines. No company name, no brandguide, etc. So {"we've"} done
+              the branding and created the website with the name AIMTODAY, which
               stands for Ads, Insights & Marketing Today.
-            </p>
-            <p className="text-white/80 mt-2 font-['Syne'] text-sm md:text-base leading-relaxed">
-              {"We've"} done the branding and created the website with the name
-              AIMTODAY, which stands for Ads, Insights & Marketing Today.
             </p>
             <p className="text-white/80 mt-2 font-['Syne'] text-sm md:text-base leading-relaxed">
               {"I've"} participated in the branding, UI/UX design and the
