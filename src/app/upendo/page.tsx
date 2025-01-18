@@ -1,12 +1,10 @@
 "use client";
 
 import BackBtn from "@/components/backbtn";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useEffect } from "react";
 
 export default function Home() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const glowElements = document.querySelectorAll(
@@ -68,14 +66,16 @@ export default function Home() {
               Upendo's services.
             </p>
             <p className="text-white/80 mt-2 font-['Syne'] text-sm md:text-base leading-relaxed">
-              I participated in the UI/UX design and the frontend and the
+              I'm thrilled to have contributed to the UI/UX design and the
               frontend development.
             </p>
           </div>
           <div className="col-span-4 md:col-span-4 md:col-start-9 mt-8 md:mt-0">
-            <img
+            <Image
               src="/upendo.png"
-              alt="RaveRebel brand"
+              alt="Upendo screenshot"
+              width={400}
+              height={300}
               className="w-full md:w-64 h-full object-cover rounded-lg"
             />
           </div>

@@ -39,7 +39,7 @@ export default function SkillsSection() {
         </h2>
         {/* Mobile view */}
         <div className="grid grid-cols-4 gap-[20px] md:hidden max-w-[1440px] mx-auto relative z-0">
-          {skills.map((skill, index) => (
+          {skills.map((skill) => (
             <div
               key={skill.name}
               className={`col-span-2 rounded-lg bg-zinc-800/50 p-4 transition-all hover:bg-[#191919] relative z-0`}

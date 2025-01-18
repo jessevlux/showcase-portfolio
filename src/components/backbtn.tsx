@@ -1,16 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BackBtn() {
   return (
-    <div className="relative">
-      {/* Navigation Button */}
-      <Link href="/" className="absolute top-8 left-8">
-        <img
-          src="/navbtn.svg"
-          alt="Back to Home"
-          className="w-12 h-12 hover:scale-110 transition-transform duration-200"
-        />
-      </Link>
-    </div>
+    <Link
+      href="/"
+      id="navBtn"
+      className="fixed top-8 left-8 z-50 transition-opacity duration-300"
+    >
+      <Image
+        src="/back.svg"
+        alt="Back to home"
+        width={32}
+        height={32}
+        className="w-8 h-8"
+      />
+    </Link>
   );
 }

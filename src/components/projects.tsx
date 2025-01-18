@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function ProjectsSection() {
   const router = useRouter();
@@ -62,10 +63,12 @@ export default function ProjectsSection() {
             >
               <div className="flex flex-col gap-4 relative z-0">
                 <div className="h-48 w-full relative z-0">
-                  <img
+                  <Image
                     src={project.image}
                     alt={`${project.title} preview`}
-                    className="h-full w-full object-fit relative z-0"
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
                 <div className="flex flex-col relative z-0">

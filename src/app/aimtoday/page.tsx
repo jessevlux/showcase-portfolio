@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import BackBtn from "@/components/backbtn";
+import Image from "next/image";
 
 export default function Home() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const glowElements = document.querySelectorAll(
@@ -68,15 +67,21 @@ export default function Home() {
               stands for Ads, Insights & Marketing Today.
             </p>
             <p className="text-white/80 mt-2 font-['Syne'] text-sm md:text-base leading-relaxed">
-              I participated in the branding, UI/UX design and the frontend and
-              the frontend development.
+              {"We've"} done the branding and created the website with the name
+              AIMTODAY, which stands for Ads, Insights & Marketing Today.
+            </p>
+            <p className="text-white/80 mt-2 font-['Syne'] text-sm md:text-base leading-relaxed">
+              {"I've"} participated in the branding, UI/UX design and the
+              frontend and the frontend development.
             </p>
           </div>
           <div className="col-span-4 md:col-span-4 md:col-start-9 mt-8 md:mt-0">
-            <img
+            <Image
               src="/upendo.png"
               alt="RaveRebel brand"
               className="w-full md:w-64 h-full object-cover rounded-lg"
+              width={256}
+              height={256}
             />
           </div>
         </div>

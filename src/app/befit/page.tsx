@@ -1,11 +1,10 @@
 "use client";
 
+import { useEffect } from "react";
 import BackBtn from "@/components/backbtn";
-import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const glowElements = document.querySelectorAll(
@@ -62,12 +61,12 @@ export default function Home() {
               What is BeFit?
             </h3>
             <p className="text-white/80 font-['Syne'] text-sm md:text-base leading-relaxed">
-              BeFit is an personal project I've done for school. I wanted to
+              BeFit is a personal project {"I've"} done for school. I wanted to
               create a mobile app that combines social media and fitness. The
               app is inspired on BeReal. The reason BeReal fell off is because
-              users didn't have a motive to use the app anymore. With BeFit you
-              can show your fitness progress to your friends and share what
-              you're proud of.
+              users {"didn't"} have a motive to use the app anymore. With BeFit
+              you can show your fitness progress to your friends and share what
+              {"you're"} proud of.
             </p>
             <p className="text-white/80 mt-2 font-['Syne'] text-sm md:text-base leading-relaxed">
               The app is still in progress, but I've already created the
@@ -75,9 +74,11 @@ export default function Home() {
             </p>
           </div>
           <div className="col-span-4 md:col-span-4 md:col-start-9 mt-8 md:mt-0">
-            <img
-              src="/upendo.png"
-              alt="RaveRebel brand"
+            <Image
+              src="/befit.png"
+              alt="BeFit screenshot"
+              width={400}
+              height={300}
               className="w-full md:w-64 h-full object-cover rounded-lg"
             />
           </div>
