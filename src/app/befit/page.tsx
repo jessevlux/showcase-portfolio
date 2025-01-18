@@ -69,7 +69,7 @@ export default function Home() {
               {"you're"} proud of.
             </p>
             <p className="text-white/80 mt-2 font-['Syne'] text-sm md:text-base leading-relaxed">
-              The app is still in progress, but I've already created the
+              The app is still in progress, but {"I've"} already created the
               branding and the app design with a POC.
             </p>
           </div>

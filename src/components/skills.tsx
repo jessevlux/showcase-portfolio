@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function SkillsSection() {
   const skills = [
     { name: "Figma", category: "Design tool", icon: "/figma.svg" },
@@ -23,12 +25,12 @@ export default function SkillsSection() {
             ABOUT
           </h2>
           <p className="ml-0 md:ml-[190px] max-w-[500px] col-start-1 text-zinc-400 text-md font-['Syne']">
-            My name is Jesse van Luxemburg. I'm a 20 year old student at Fontys
-            Tilburg (ICT & Media Design).
+            My name is Jesse van Luxemburg. {"I'm"} a 20 year old student at
+            Fontys Tilburg (ICT & Media Design).
           </p>
           <p className="ml-0 md:ml-[190px] max-w-[500px] mt-2 col-start-1 text-zinc-400 text-md font-['Syne']">
-            I chose this study because I've always liked creating visual things
-            visual things to entertain myself.
+            I chose this study because {"I've"} always liked creating visual
+            things visual things to entertain myself.
           </p>
         </div>
       </section>
@@ -46,9 +48,11 @@ export default function SkillsSection() {
             >
               <div className="flex items-center gap-4 relative z-0">
                 <div className="h-12 w-12 flex-shrink-0 relative z-0">
-                  <img
+                  <Image
                     src={skill.icon}
                     alt={`${skill.name} icon`}
+                    width={48}
+                    height={48}
                     className="h-full w-full relative z-0"
                   />
                 </div>
@@ -75,9 +79,11 @@ export default function SkillsSection() {
             >
               <div className="flex items-center gap-4 relative z-0">
                 <div className="h-12 w-12 flex-shrink-0 relative z-0">
-                  <img
+                  <Image
                     src={skill.icon}
                     alt={`${skill.name} icon`}
+                    width={48}
+                    height={48}
                     className="h-full w-full relative z-0"
                   />
                 </div>
