@@ -62,18 +62,16 @@ export default function Home() {
             <p className="text-white/80 font-['Syne'] text-sm md:text-base leading-relaxed">
               Upendo is a group project we did for 2manydots. 2manydots wanted
               to create a new company where you can get clear insights and data
-              for your own website. {"We've"} created the website that shows all
-              of
-              {"Upendo's"} services.
+              for your own website. We've created the website that shows all of
+              Upendo's services.
             </p>
             <p className="text-white/80 mt-2 font-['Syne'] text-sm md:text-base leading-relaxed">
-              {"I'm"} thrilled to have contributed to the UI/UX design and the
-              frontend development.
+              I participated in the UI/UX design and the frontend development.
             </p>
           </div>
           <div className="col-span-4 md:col-span-4 md:col-start-9 mt-8 md:mt-0">
             <Image
-              src="/upendo.png"
+              src="/upendo2.png"
               alt="Upendo screenshot"
               width={400}
               height={300}

@@ -37,7 +37,7 @@ export default function Home() {
           <div className="col-span-4 md:col-span-12 md:col-start-2 md:col-end-12">
             <div className="flex justify-between items-center">
               <h1 className="text-left font-['Syne'] font-extrabold text-2xl md:text-3xl text-white my-4 md:my-8">
-                AIMTODAY
+                AIMTODAY / MARKETING NEWS WEBSITE
               </h1>
             </div>
           </div>
