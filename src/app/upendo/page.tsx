@@ -63,7 +63,9 @@ export default function Home() {
               Upendo is a group project we did for 2manydots. 2manydots wanted
               to create a new company where you can get clear insights and data
               for your own website. We've created the website that shows all of
-              Upendo's services.
+              Upendo's services. for your own website. {"We've"} created the
+              website that shows all of
+              {"Upendo's"} services.
             </p>
             <p className="text-white/80 mt-2 font-['Syne'] text-sm md:text-base leading-relaxed">
               I participated in the UI/UX design and the frontend development.
