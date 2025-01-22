@@ -3,9 +3,6 @@
 // Importing necessary components and assets
 import SkillsSection from "@/components/skills";
 import ProjectsSection from "@/components/projects";
-import Image from "next/image";
-import bgimage from "../../public/bgimage.svg";
-import me from "../../public/me.svg";
 import { useEffect, useRef } from "react";
 
 // Main Home component
@@ -19,7 +16,7 @@ export default function Home() {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         if (scrollTop > lastScrollTop) {
           navRef.current.style.transition = "transform 0.3s ease";
-          navRef.current.style.transform = "translateY(-120%)";
+          navRef.current.style.transform = "translateY(-125%)";
         } else {
           navRef.current.style.transition = "transform 0.3s ease";
           navRef.current.style.transform = "translateY(0)";
@@ -39,8 +36,8 @@ export default function Home() {
         ref={navRef}
         className="fixed top-0 left-0 right-0 flex justify-center w-full z-20 mt-3"
       >
-        <div className="w-[47rem] max-w-[90vw] rounded-2xl p-2 bg-[#0e0e0e] flex items-center justify-between">
-          <div className="text-[#CBFFFE] font-['Syne'] pl-4 font-extrabold py-2">
+        <div className="w-[47rem] max-w-[90vw] rounded-2xl md:p-2 p-1 bg-[#0e0e0e] flex items-center justify-between">
+          <div className="text-[#CBFFFE] hidden md:block font-['Syne'] pl-4 font-extrabold py-2">
             JESSE v LUX
           </div>
           <div className="flex space-x-4">
@@ -51,7 +48,7 @@ export default function Home() {
                   .getElementById("skills")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="text-[#CBFFFE] font-['Syne'] font-semibold w-[120px] py-2 rounded-lg hover:bg-[#CBFFFE] hover:text-[#191919] transition-colors"
+              className="text-[#CBFFFE] font-['Syne'] font-semibold md:w-[120px] pl-4 py-2 rounded-lg hover:bg-[#CBFFFE] hover:text-[#191919] transition-colors"
             >
               About
             </button>
@@ -88,7 +85,7 @@ export default function Home() {
             {/* Infinity banner right to left */}
             <div className="overflow-hidden whitespace-nowrap">
               <div className="flex animate-marquee-left">
-                {Array.from({ length: 10 }, (_, index) => (
+                {Array.from({ length: 100 }, (_, index) => (
                   <span
                     key={`marquee-left-${index}`}
                     className="text-[48px] md:text-[64px] lg:text-[80px] bg-gradient-to-r from-[#227F8B] to-[#8DB4B3] bg-clip-text text-transparent animate-gradient"
@@ -99,9 +96,9 @@ export default function Home() {
               </div>
             </div>
             {/* Infinity banner left to right */}
-            <div className="overflow-hidden whitespace-nowrap -mt-10">
+            <div className="overflow-hidden whitespace-nowrap -mt-8 md:-mt-10">
               <div className="flex animate-marquee-right">
-                {Array.from({ length: 10 }, (_, index) => (
+                {Array.from({ length: 100 }, (_, index) => (
                   <span
                     key={`marquee-right-${index}`}
                     className="text-[48px] md:text-[64px] lg:text-[80px] bg-gradient-to-r from-[#8DB4B3] to-[#227F8B] bg-clip-text text-transparent animate-gradient"
@@ -124,7 +121,7 @@ export default function Home() {
               .animate-marquee-left {
                 display: inline-block;
                 white-space: nowrap;
-                animation: marquee-left 180s linear infinite;
+                animation: marquee-left 2000s linear infinite;
               }
               @keyframes marquee-right {
                 0% {
@@ -137,7 +134,7 @@ export default function Home() {
               .animate-marquee-right {
                 display: inline-block;
                 white-space: nowrap;
-                animation: marquee-right 180s linear infinite;
+                animation: marquee-right 2000s linear infinite;
               }
             `}</style>
             <style jsx>{`
@@ -199,16 +196,16 @@ export default function Home() {
       {/* Contact section */}
       <section className="w-full relative mb-16 z-0" id="contact">
         <div className="container mx-auto px-4 md:px-[70px] relative z-0">
-          <h2 className="ml-0 md:ml-[190px] mb-6 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
+          <h2 className="ml-0 md:ml-[190px] mb-4 -mt-3 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-[#CBFFFE] relative z-0">
             CONTACT
           </h2>
           <div className="ml-0 md:ml-[190px] max-w-[500px]">
-            <p className="text-zinc-400 text-md font-['Syne']">
+            <p className="text-white text-md font-['Syne']">
               Want to work with me? <br></br>
               <br></br>
-              <span className="flex items-center -mt-4 text-zinc-400 gap-2">
+              <span className="flex items-center -mt-4 text-white gap-2">
                 <svg
-                  className="text-white"
+                  className="text-[#CBFFFE]"
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
@@ -225,9 +222,9 @@ export default function Home() {
                 jessevanluxemburg@outlook.com
               </span>
               <br></br>
-              <span className="flex items-center text-zinc-400 -mt-4 gap-2">
+              <span className="flex items-center text-white -mt-4 gap-2">
                 <svg
-                  className="text-white"
+                  className="text-[#CBFFFE]"
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"

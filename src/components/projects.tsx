@@ -58,7 +58,7 @@ export default function ProjectsSection() {
                 lg:col-span-4
                 ${index % 2 === 0 ? "lg:col-start-3" : "lg:col-start-7"}
                 md:${index % 2 === 0 ? "md:col-start-2" : "md:col-start-7"}
-                rounded-lg transition-all hover:bg-transparent cursor-pointer relative z-0
+                rounded-lg transition-all hover:bg-transparent cursor-pointerrelative z-0 
               `}
             >
               <div className="flex flex-col gap-4 relative z-0">
@@ -73,21 +73,21 @@ export default function ProjectsSection() {
                 </div>
                 <div className="flex flex-col relative z-0">
                   <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-md font-['Syne'] font-semibold text-white -mt-2 group-hover:underline relative z-0">
+                    <h3 className="text-md font-['Syne'] font-semibold text-[#CBFFFE] group-hover:underline relative z-0">
                       {project.title}
                     </h3>
                     <span className="text-sm font-['Syne'] -mt-2 text-zinc-400">
                       {project.date}
                     </span>
                   </div>
-                  <p className="text-sm text-zinc-400 opacity-80 -mt-2 font-regular font-['Syne'] relative z-0">
+                  <p className="text-sm text-white opacity-80 -mt-1 font-regular font-['Syne'] relative z-0">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-3 mb-3">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-4 h-[30px] leading-[30px] bg-[#134A51] text-[#CBFFFE] text-sm font-['Syne'] font-regular rounded-full"
+                        className="px-4 h-[30px] mb-1 leading-[30px] bg-[#0e0e0e] border-[#CBFFFE] text-white text-sm font-['Syne'] font-regular rounded-full"
                       >
                         {tag}
                       </span>

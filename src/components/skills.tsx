@@ -22,13 +22,13 @@ export default function SkillsSection() {
       <section className="w-full relative z-0">
         <div className="container mx-auto px-4 md:px-[70px] relative z-0">
           <h2 className="ml-0 md:ml-[190px] mb-6 -mt-3 text-left text-3xl font-['Syne'] font-bold tracking-wider text-[#CBFFFE] relative z-0">
-            ABOUT
+            About
           </h2>
-          <p className="ml-0 md:ml-[190px] max-w-[500px] col-start-1 text-zinc-400 text-md font-['Syne']">
+          <p className="ml-0 md:ml-[190px] max-w-[500px] col-start-1 -mt-2 text-white text-md font-['Syne']">
             My name is Jesse van Luxemburg. {"I'm"} a 20 year old student at
             Fontys Tilburg (ICT & Media Design).
           </p>
-          <p className="ml-0 md:ml-[190px] max-w-[500px] mt-2 col-start-1 text-zinc-400 text-md font-['Syne']">
+          <p className="ml-0 md:ml-[190px] max-w-[500px] mt-1 col-start-1 text-white text-md font-['Syne']">
             I chose this study because {"I've"} always liked creating visual
             things visual things to entertain myself.
           </p>
@@ -37,7 +37,7 @@ export default function SkillsSection() {
       {/* Skills */}
       <div className="container mx-auto px-4 md:px-[70px] relative z-0">
         <h2 className="ml-0 md:ml-[190px] mb-6 mt-8 text-left text-3xl font-['Syne'] font-bold tracking-wider text-[#CBFFFE] relative z-0">
-          SKILLS
+          Skills
         </h2>
         {/* Mobile view */}
         <div className="grid grid-cols-4 gap-[20px] md:hidden max-w-[1440px] mx-auto relative z-0">
@@ -75,7 +75,7 @@ export default function SkillsSection() {
               key={skill.name}
               className={`col-span-2 ${index % 4 === 0 ? "col-start-3" : ""} ${
                 index % 4 === 3 ? "col-end-11" : ""
-              } rounded-lg bg-zinc-800/50 p-4 transition-all hover:bg-[#191919] relative z-0`}
+              } rounded-lg bg-[#0e0e0e] p-4 transition-all relative z-0`}
             >
               <div className="flex items-center gap-4 relative z-0">
                 <div className="h-12 w-12 flex-shrink-0 relative z-0">
