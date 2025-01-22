@@ -31,47 +31,16 @@ export default function Home() {
 
   return (
     <main className="w-full overflow-hidden relative">
-      {/* Banner */}
-      <div className="h-[50vh] flex items-center justify-center bg-url[('../public/bgimage.png')] bg-cover bg-no-repeat relative px-4 md:px-0">
-        <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
-        <Image
-          src={bgimage}
-          alt="bgimage"
-          quality={100}
-          className="absolute w-full h-[50vh] object-cover z-10"
-        />
-        <div className="flex flex-col items-center z-20 relative">
-          <h1 className="text-center font-['Syne'] font-extrabold text-[32px] md:text-[50px] text-white px-4 md:px-0">
-            JESSE VAN LUXEMBURG
-          </h1>
-          <p className="text-center font-['Syne'] font-regular text-white text-md">
-            STUDENT @ FONTYS ICT
-          </p>
-        </div>
-      </div>
-
-      {/* Image and navigation */}
-      <div className="flex flex-col md:flex-row md:h-[50vh]">
-        {/* Image */}
-        <div className="w-full hidden md:block md:w-1/2  bg-[#191919] h-[40vh] md:h-[50vh] relative">
-          <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
-          <Image
-            src={me}
-            alt="me"
-            className="w-full h-full object-cover z-10 relative"
-            quality={100}
-          />
-        </div>
-        {/* Navigation */}
-        <div className="w-full md:w-1/2 bg-[#19191973] flex flex-col justify-start gap-4 p-8 relative h-[40vh] md:h-[50vh] overflow-hidden">
-          <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
+      {/* Navigation */}
+      <div className="w-[85%] flex justify-end p-3 mt-1 fixed mx-auto bg-[#181818] rounded-md z-20">
+        <div className="grid grid-cols-10 gap-4 justify-center">
           <button
             onClick={() => {
               document
                 .getElementById("skills")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-full md:w-[250px] relative z-10"
+            className="bg-[#191919] text-white font-['Syne'] font-semibold px-4 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors col-span-3"
           >
             About
           </button>
@@ -81,7 +50,7 @@ export default function Home() {
                 .getElementById("projects")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="bg-[#191919] text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors w-full md:w-[250px] relative z-10"
+            className="bg-[#191919] text-white font-['Syne'] font-semibold px-4 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors col-span-3"
           >
             Projects
           </button>
@@ -91,10 +60,28 @@ export default function Home() {
                 .getElementById("contact")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="bg-none text-white font-['Syne'] font-semibold px-8 py-2 rounded-lg border border-white hover:bg-white hover:text-[#191919] transition-colors w-full md:w-[250px] relative z-10"
+            className="bg-none text-white font-['Syne'] font-semibold px-4 py-2 rounded-lg border border-white hover:bg-white hover:text-[#191919] transition-colors col-span-3"
           >
             Contact
           </button>
+        </div>
+      </div>
+      {/* Banner */}
+      <div className="h-[50vh] flex items-center justify-center bg-url[('../public/bgimage.png')] bg-cover bg-no-repeat relative px-4 md:px-0 z-0">
+        <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
+        <Image
+          src={bgimage}
+          alt="bgimage"
+          quality={100}
+          className="absolute w-full h-[50vh] object-cover z-10"
+        />
+        <div className="flex flex-col items-center z-20 relative">
+          <h1 className="text-center font-['Syne'] font-extrabold text-[32px] md:text-[34px] text-white px-4 md:px-0">
+            JESSE VAN LUXEMBURG
+          </h1>
+          <p className="text-center font-['Syne'] font-regular text-white text-md">
+            STUDENT @ FONTYS ICT
+          </p>
         </div>
       </div>
 
