@@ -30,14 +30,14 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full overflow-hidden relative">
+    <main className="w-full min-h-screen overflow-hidden relative">
       <BackBtn />
       <div className="container mx-auto px-4 md:px-[70px] relative z-0">
         <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">
           <div className="col-span-4 md:col-span-12 md:col-start-2 md:col-end-12">
             <div className="flex justify-between items-center">
               <h1 className="text-left font-['Syne'] font-extrabold text-2xl md:text-3xl text-white my-4 md:my-8">
-                AIMTODAY / MARKETING NEWS WEBSITE
+                MARKETING NEWS WEBSITE
               </h1>
             </div>
           </div>
@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <div className="col-span-4 md:col-span-4 md:col-start-9 mt-8 md:mt-0">
             <Image
-              src="/upendo.png"
+              src="/aimtodaylogo.png"
               alt="RaveRebel brand"
               className="w-full md:w-64 h-full object-cover rounded-lg"
               width={256}

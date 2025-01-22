@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full overflow-hidden relative">
+    <main className="w-full overflow-hidden min-h-screen relative">
       <BackBtn />
 
       <div className="container mx-auto px-4 md:px-[70px] relative z-0">
