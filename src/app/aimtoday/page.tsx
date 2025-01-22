@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full relative">
+    <main className="w-full overflow-hidden relative">
       <BackBtn />
       <div className="container mx-auto px-4 md:px-[70px] relative z-0">
         <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">
@@ -106,6 +106,8 @@ export default function Home() {
       <div className="glow-effect absolute pointer-events-none w-[200px] md:w-[300px] h-[200px] md:h-[300px] z-0" />
       <style jsx global>{`
         .glow-effect {
+          position: absolute;
+          pointer-events: none;
           background: radial-gradient(
             circle at center,
             rgba(110, 183, 184, 0.35) 0%,

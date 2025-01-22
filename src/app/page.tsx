@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full relative">
+    <main className="w-full overflow-hidden relative">
       {/* Banner */}
       <div className="h-[50vh] flex items-center justify-center bg-url[('../public/bgimage.png')] bg-cover bg-no-repeat relative px-4 md:px-0">
         <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
