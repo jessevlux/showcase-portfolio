@@ -44,7 +44,7 @@ export default function ProjectsSection() {
   return (
     <section className="w-full relative z-0">
       <div className="container mx-auto px-4 md:px-[70px] relative z-0">
-        <h2 className="ml-0 md:ml-[190px] mb-8 -mt-3 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
+        <h2 className="ml-0 md:ml-[190px] mb-8 -mt-3 text-left text-3xl font-['Syne'] font-bold tracking-wider text-[#CBFFFE] relative z-0">
           PROJECTS
         </h2>
         <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">

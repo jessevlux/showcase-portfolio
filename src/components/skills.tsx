@@ -21,7 +21,7 @@ export default function SkillsSection() {
       {/* About */}
       <section className="w-full relative z-0">
         <div className="container mx-auto px-4 md:px-[70px] relative z-0">
-          <h2 className="ml-0 md:ml-[190px] mb-6 -mt-3 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
+          <h2 className="ml-0 md:ml-[190px] mb-6 -mt-3 text-left text-3xl font-['Syne'] font-bold tracking-wider text-[#CBFFFE] relative z-0">
             ABOUT
           </h2>
           <p className="ml-0 md:ml-[190px] max-w-[500px] col-start-1 text-zinc-400 text-md font-['Syne']">
@@ -36,7 +36,7 @@ export default function SkillsSection() {
       </section>
       {/* Skills */}
       <div className="container mx-auto px-4 md:px-[70px] relative z-0">
-        <h2 className="ml-0 md:ml-[190px] mb-6 mt-8 text-left text-3xl font-['Syne'] font-semibold tracking-wider text-white relative z-0">
+        <h2 className="ml-0 md:ml-[190px] mb-6 mt-8 text-left text-3xl font-['Syne'] font-bold tracking-wider text-[#CBFFFE] relative z-0">
           SKILLS
         </h2>
         {/* Mobile view */}
