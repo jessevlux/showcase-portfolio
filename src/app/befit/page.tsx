@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import BackBtn from "@/components/backbtn";
 
 export default function Home() {
