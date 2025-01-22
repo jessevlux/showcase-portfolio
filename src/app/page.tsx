@@ -8,39 +8,18 @@ import me from "../../public/me.svg";
 import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const glowElements = document.querySelectorAll(
-        ".glow-effect"
-      ) as NodeListOf<HTMLElement>;
-      glowElements.forEach((glowElement) => {
-        const rect = glowElement.parentElement?.getBoundingClientRect();
-        if (rect) {
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-
-          glowElement.style.left = `${x}px`;
-          glowElement.style.top = `${y}px`;
-        }
-      });
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    return () => document.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   return (
     <main className="w-full overflow-hidden relative">
       {/* Navigation */}
-      <div className="w-[85%] flex justify-end p-3 mt-1 fixed mx-auto bg-[#181818] rounded-md z-20">
-        <div className="grid grid-cols-10 gap-4 justify-center">
+      <div className="w-[85%] fixed left-1/2 transform -translate-x-1/2 p-2 mt-1 bg-[#0f0f0f] rounded-xl z-20 flex justify-end">
+        <div className="flex space-x-4">
           <button
             onClick={() => {
               document
                 .getElementById("skills")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="bg-[#191919] text-white font-['Syne'] font-semibold px-4 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors col-span-3"
+            className="bg-[#191919] text-white font-['Syne'] font-semibold w-[120px] py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors"
           >
             About
           </button>
@@ -50,7 +29,7 @@ export default function Home() {
                 .getElementById("projects")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="bg-[#191919] text-white font-['Syne'] font-semibold px-4 py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors col-span-3"
+            className="bg-[#191919] text-white font-['Syne'] font-semibold w-[120px] py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors"
           >
             Projects
           </button>
@@ -60,21 +39,15 @@ export default function Home() {
                 .getElementById("contact")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="bg-none text-white font-['Syne'] font-semibold px-4 py-2 rounded-lg border border-white hover:bg-white hover:text-[#191919] transition-colors col-span-3"
+            className="bg-[#191919] text-white font-['Syne'] font-semibold w-[120px] py-2 rounded-lg hover:bg-white hover:text-[#191919] transition-colors"
           >
             Contact
           </button>
         </div>
       </div>
-      {/* Banner */}
-      <div className="h-[50vh] flex items-center justify-center bg-url[('../public/bgimage.png')] bg-cover bg-no-repeat relative px-4 md:px-0 z-0">
+      {/* Home */}
+      <div className="h-screen flex items-center justify-center bg-url[('../public/bgimage.png')] bg-cover bg-no-repeat relative px-4 md:px-0 z-0">
         <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
-        <Image
-          src={bgimage}
-          alt="bgimage"
-          quality={100}
-          className="absolute w-full h-[50vh] object-cover z-10"
-        />
         <div className="flex flex-col items-center z-20 relative">
           <h1 className="text-center font-['Syne'] font-extrabold text-[32px] md:text-[34px] text-white px-4 md:px-0">
             JESSE VAN LUXEMBURG
@@ -167,34 +140,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <style jsx global>{`
-        .glow-effect {
-          background: radial-gradient(
-            circle at center,
-            rgba(110, 183, 184, 0.35) 0%,
-            rgba(110, 183, 184, 0.2) 40%,
-            rgba(110, 183, 184, 0) 70%
-          );
-          transform: translate(-50%, -50%);
-          mix-blend-mode: screen;
-          filter: blur(8px);
-          transition: all 0.2s ease-out;
-          animation: pulse 2s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-          0% {
-            transform: translate(-50%, -50%) scale(0.95);
-          }
-          50% {
-            transform: translate(-50%, -50%) scale(1.05);
-          }
-          100% {
-            transform: translate(-50%, -50%) scale(0.95);
-          }
-        }
-      `}</style>
     </main>
   );
 }

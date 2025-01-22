@@ -47,27 +47,6 @@ export default function Home() {
     );
   };
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const glowElements = document.querySelectorAll(
-        ".glow-effect"
-      ) as NodeListOf<HTMLElement>;
-      glowElements.forEach((glowElement) => {
-        const rect = glowElement.parentElement?.getBoundingClientRect();
-        if (rect) {
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-
-          glowElement.style.left = `${x}px`;
-          glowElement.style.top = `${y}px`;
-        }
-      });
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    return () => document.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   const getImageIndex = (offset: number) => {
     return (currentIndex + offset + images.length) % images.length;
   };
@@ -216,56 +195,6 @@ export default function Home() {
         `,
         }}
       />
-      <style jsx>{`
-        .carousel-container {
-          perspective: 1000px;
-        }
-        .carousel {
-          display: flex;
-          transition: transform 0.5s ease-in-out;
-        }
-        .carousel-item {
-          backface-visibility: hidden;
-        }
-
-        @media (max-width: 768px) {
-          .container {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-        }
-      `}</style>
-
-      <div className="glow-effect absolute pointer-events-none w-[200px] md:w-[300px] h-[200px] md:h-[300px] z-0" />
-      <style jsx global>{`
-        .glow-effect {
-          position: absolute;
-          pointer-events: none;
-          background: radial-gradient(
-            circle at center,
-            rgba(110, 183, 184, 0.35) 0%,
-            rgba(110, 183, 184, 0.2) 40%,
-            rgba(110, 183, 184, 0) 70%
-          );
-          transform: translate(-50%, -50%);
-          mix-blend-mode: screen;
-          filter: blur(8px);
-          transition: all 0.2s ease-out;
-          animation: pulse 2s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-          0% {
-            transform: translate(-50%, -50%) scale(0.95);
-          }
-          50% {
-            transform: translate(-50%, -50%) scale(1.05);
-          }
-          100% {
-            transform: translate(-50%, -50%) scale(0.95);
-          }
-        }
-      `}</style>
     </main>
   );
 }
