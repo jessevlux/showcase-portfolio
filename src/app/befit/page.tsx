@@ -73,15 +73,19 @@ export default function Home() {
               branding and the app design with a POC.
             </p>
           </div>
-          <div className="col-span-4 md:col-span-4 md:col-start-9 mt-8 md:mt-0">
-            <Image
-              src="/befit.png"
-              alt="BeFit screenshot"
-              width={400}
-              height={300}
-              className="w-full md:w-64 h-full object-cover rounded-lg"
-            />
-          </div>
+        </div>
+        <div className="flex -mt-8 justify-center">
+          <iframe
+            style={{
+              border: "1px solid rgba(0, 0, 0, 0.1)",
+              borderRadius: "8px",
+              marginBottom: "40px",
+            }}
+            width="800"
+            height="450"
+            src="https://embed.figma.com/proto/5b8j6CGULA2GNTl9u9t43s/BeFit?page-id=218%3A104&node-id=218-105&p=f&viewport=60%2C111%2C0.11&scaling=scale-down&content-scaling=fixed&starting-point-node-id=218%3A105&embed-host=share"
+            allowFullScreen
+          />
         </div>
       </div>
 
