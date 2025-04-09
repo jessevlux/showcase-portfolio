@@ -21,14 +21,14 @@ export default function SkillsSection() {
       {/* About */}
       <section className="w-full relative z-0">
         <div className="container mx-auto px-4 md:px-[70px] relative z-0">
-          <h2 className="ml-0 md:ml-[190px] mb-6 -mt-3 text-left text-3xl font-['Syne'] font-bold tracking-wider text-[#CBFFFE] relative z-0">
+          <h2 className="mb-6 -mt-3 text-left text-2xl font-['Poppins'] font-bold tracking-wider text-[#4fb1c4] relative z-0">
             About
           </h2>
-          <p className="ml-0 md:ml-[190px] max-w-[500px] col-start-1 -mt-2 text-white text-md font-['Syne']">
+          <p className="max-w-[500px] col-start-1 -mt-2 text-white text-md font-['Poppins']">
             My name is Jesse van Luxemburg. {"I'm"} a 20 year old student at
             Fontys Tilburg (ICT & Media Design).
           </p>
-          <p className="ml-0 md:ml-[190px] max-w-[500px] mt-1 col-start-1 text-white text-md font-['Syne']">
+          <p className=" max-w-[500px] mt-1 col-start-1 text-white text-md font-['Poppins']">
             I chose this study because {"I've"} always liked creating visual
             things visual things to entertain myself.
           </p>
@@ -36,7 +36,7 @@ export default function SkillsSection() {
       </section>
       {/* Skills */}
       <div className="container mx-auto px-4 md:px-[70px] relative z-0">
-        <h2 className="ml-0 md:ml-[190px] mb-6 mt-8 text-left text-3xl font-['Syne'] font-bold tracking-wider text-[#CBFFFE] relative z-0">
+        <h2 className=" mb-6 mt-8 text-left text-2xl font-['Poppins'] font-bold tracking-wider text-[#4fb1c4] relative z-0">
           Skills
         </h2>
         {/* Mobile view */}
@@ -44,7 +44,7 @@ export default function SkillsSection() {
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className={`col-span-2 rounded-lg bg-zinc-800/50 p-4 transition-all hover:bg-[#191919] relative z-0`}
+              className={`col-span-2 rounded-lg bg-[#191919] p-4 transition-all relative z-0`}
             >
               <div className="flex items-center gap-4 relative z-0">
                 <div className="h-12 w-12 flex-shrink-0 relative z-0">
@@ -57,10 +57,10 @@ export default function SkillsSection() {
                   />
                 </div>
                 <div className="flex flex-col relative z-0">
-                  <h3 className="text-md font-['Syne'] font-regular text-white relative z-0">
+                  <h3 className="text-md font-['Poppins'] font-regular text-white relative z-0">
                     {skill.name}
                   </h3>
-                  <p className="text-xs text-zinc-400 relative z-0">
+                  <p className="text-xs font-['Syne'] text-zinc-400 relative z-0">
                     {skill.category}
                   </p>
                 </div>
@@ -73,9 +73,9 @@ export default function SkillsSection() {
           {skills.map((skill, index) => (
             <div
               key={skill.name}
-              className={`col-span-2 ${index % 4 === 0 ? "col-start-3" : ""} ${
-                index % 4 === 3 ? "col-end-11" : ""
-              } rounded-lg bg-[#0e0e0e] p-4 transition-all relative z-0`}
+              className={`col-span-3 ${
+                index % 4 === 0 ? "col-start-1" : ""
+              } rounded-lg bg-[#191919] p-4 transition-all relative z-0`}
             >
               <div className="flex items-center gap-4 relative z-0">
                 <div className="h-12 w-12 flex-shrink-0 relative z-0">
@@ -88,10 +88,10 @@ export default function SkillsSection() {
                   />
                 </div>
                 <div className="flex flex-col relative z-0">
-                  <h3 className="text-md font-['Syne'] font-regular text-white relative z-0">
+                  <h3 className="text-md font-['Poppins'] font-regular text-white relative z-0">
                     {skill.name}
                   </h3>
-                  <p className="text-xs text-zinc-400 relative z-0">
+                  <p className="text-sm font-['Syne'] text-zinc-400 relative z-0">
                     {skill.category}
                   </p>
                 </div>

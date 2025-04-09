@@ -14,7 +14,8 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        'syne': ['Syne Variable', 'sans-serif']
+        'syne': ['Syne Variable', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif']
       }
     },
   },

@@ -23,7 +23,7 @@ export default function Home() {
       <div
         className="w-[90%] md:w-5/6 mx-auto h-[1px] rounded-full"
         style={{
-          background: "linear-gradient(90deg, #134A51 0%, #8DB4B3 100%)",
+          background: "linear-gradient(90deg, #134A51 0%, #CBFFFE 100%)",
         }}
       />
 
