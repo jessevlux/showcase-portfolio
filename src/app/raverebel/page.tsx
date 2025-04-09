@@ -85,12 +85,12 @@ export default function Home() {
               window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
             }
             aria-label="Scroll down"
-            className="text-white hover:text-white/80 transition-colors bg-black/50 p-2 rounded-full"
+            className="text-white hover:text-[#4fb1c4] transition-colors bg-black/50 p-2 rounded-full"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
+              width="24"
+              height="24"
               fill="currentColor"
               viewBox="0 0 16 16"
               className="animate-fadeIn animation-delay-500"

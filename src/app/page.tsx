@@ -3,6 +3,7 @@
 // Importing necessary components and assets
 import SkillsSection from "@/components/skills";
 import ProjectsSection from "@/components/projects";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 // Main Home component
@@ -81,6 +82,20 @@ export default function Home() {
       </div>
       {/* Home section */}
       <div className="h-screen flex items-center justify-center relative px-4 md:px-0 z-0">
+        {/* Background image with gradient overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="relative w-full h-full">
+            <Image
+              src="/me.svg"
+              alt="Background"
+              fill
+              style={{ objectFit: "cover", objectPosition: "top" }}
+              className="opacity-85"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/65 to-black/90" />
+          </div>
+        </div>
+
         <div className="glow-effect absolute pointer-events-none w-[300px] h-[300px] z-0" />
         <div className="flex flex-col items-center z-20 relative">
           <h1 className="text-center font-['Syne'] font-extrabold text-[32px] md:text-[34px] text-[#4fb1c4] px-4 md:px-0">
@@ -161,6 +176,28 @@ export default function Home() {
             STUDENT @ FONTYS ICT
           </p>
         </div>
+
+        {/* Scroll down button - positioned absolutely relative to the home section */}
+        <div className="absolute bottom-8 transform -translate-x-1/2 z-20 animate-bounce">
+          <button
+            onClick={() =>
+              window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+            }
+            aria-label="Scroll down"
+            className="text-white hover:text-[#4fb1c4] transition-colors bg-black/50 p-2 rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+              className="animate-fadeIn animation-delay-500"
+            >
+              <path d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Line separator */}
@@ -169,6 +206,7 @@ export default function Home() {
         id="skills"
         style={{
           background: "linear-gradient(90deg, #4fb1c4 0%, #CBFFFE 100%)",
+          opacity: 0,
         }}
       />
 
@@ -180,22 +218,25 @@ export default function Home() {
 
       {/* Line separator */}
       <div
-        className="max-w-[88vw] mx-auto h-[1px] my-16 rounded-full"
+        className="max-w-[88vw] mx-auto h-[1px] mt-8 rounded-full"
+        id="skills"
         style={{
-          background: "linear-gradient(90deg, #CBFFFE 0%, #4fb1c4 100%)",
+          background: "linear-gradient(90deg, #4fb1c4 0%, #CBFFFE 100%)",
+          opacity: 0,
         }}
       />
-
       {/* Contact section */}
-      <section className="w-full relative mb-16 z-0" id="contact">
+      <section
+        className="w-full relative pb-12 z-0 bg-gradient-to-b from-[#121212] to-[#4fb1c4]/50"
+        id="contact"
+      >
         <div className="container mx-auto px-4 md:px-[70px] relative z-0">
-          <h2 className=" mb-4 -mt-3 text-left text-2xl font-['Poppins'] font-semibold tracking-wider text-[#4fb1c4] relative z-0">
+          <h2 className=" pt-16 text-left text-2xl font-['Poppins'] font-semibold tracking-wider text-white relative z-0">
             CONTACT
           </h2>
-
           <p className="text-white text-md font-['Poppins']">
             <br></br>
-            <span className="flex items-center -mt-4 text-white gap-2">
+            <span className="flex items-center text-white gap-3">
               <svg
                 className="text-[#4fb1c4]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -214,7 +255,7 @@ export default function Home() {
               jessevanluxemburg@outlook.com
             </span>
             <br></br>
-            <span className="flex items-center text-white -mt-4 gap-2">
+            <span className="flex items-center text-white gap-3">
               <svg
                 className="text-[#4fb1c4]"
                 xmlns="http://www.w3.org/2000/svg"

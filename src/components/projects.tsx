@@ -72,7 +72,7 @@ export default function ProjectsSection() {
                 </div>
                 <div className="flex flex-col relative px-4 z-0">
                   <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-md font-['Poppins'] font-semibold text-[#CBFFFE] group-hover:underline relative z-0">
+                    <h3 className="text-md font-['Poppins'] font-semibold text-white group-hover:underline relative z-0">
                       {project.title}
                     </h3>
                     <span className="text-sm font-['Syne'] -mt-2 text-zinc-400">
