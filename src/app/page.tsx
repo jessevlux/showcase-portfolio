@@ -37,12 +37,12 @@ export default function Home() {
         ref={navRef}
         className="fixed top-0 left-0 right-0 flex justify-center w-full z-20 mt-3"
       >
-        <div className="w-full max-w-[90vw] rounded-2xl md:p-[4px] bg-[#0a0a0a] flex items-center justify-between">
+        <div className="w-full max-w-[90vw] rounded-2xl  bg-[#0a0a0a] flex items-center justify-between">
           <div className="w-full h-full md:p-1 rounded-xl bg-[#0a0a0a] flex items-center justify-between">
             <div className="text-[#4fb1c4] hidden md:block font-['Syne'] pl-4 font-extrabold py-2">
               JESSE v LUX
             </div>
-            <div className="flex space-x-4">
+            <div className="flex space-x-1 md:space-x-4 mx-auto md:mx-0">
               {/* About button */}
               <button
                 onClick={() => {
@@ -50,7 +50,7 @@ export default function Home() {
                     .getElementById("skills")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="text-white font-['Poppins'] font-semibold w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-colors"
+                className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-colors"
               >
                 About
               </button>
@@ -61,7 +61,7 @@ export default function Home() {
                     .getElementById("projects")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="text-white font-['Poppins'] font-semibold w-[120px] py-2 rounded-lg hover:text-[#4fb1c4]  transition-colors"
+                className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-colors"
               >
                 Projects
               </button>
@@ -72,7 +72,7 @@ export default function Home() {
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="text-white font-['Poppins'] font-semibold w-[120px] py-2 rounded-lg hover:text-[#4fb1c4]  transition-colors"
+                className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-colors"
               >
                 Contact
               </button>

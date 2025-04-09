@@ -57,7 +57,7 @@ export default function SkillsSection() {
                   />
                 </div>
                 <div className="flex flex-col relative z-0">
-                  <h3 className="text-md font-['Poppins'] font-regular text-white relative z-0">
+                  <h3 className="text-sm font-['Poppins'] font-regular text-white relative z-0">
                     {skill.name}
                   </h3>
                   <p className="text-xs font-['Syne'] text-zinc-400 relative z-0">

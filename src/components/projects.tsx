@@ -42,13 +42,13 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section className="w-full relative z-0">
+    <section className="w-full relative z-0" id="projects">
       <div className="container mx-auto px-4 md:px-[70px] relative z-0">
-        <h2 className="ml-0 md:ml-[190px] mb-8 -mt-3 text-left text-3xl font-['Syne'] font-bold tracking-wider text-[#CBFFFE] relative z-0">
+        <h2 className=" mb-6 mt-8 text-left text-2xl font-['Poppins'] font-bold tracking-wider text-[#4fb1c4] relative z-0">
           PROJECTS
         </h2>
         <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <div
               key={project.title}
               onClick={() => router.push(project.path)}
@@ -57,7 +57,7 @@ export default function ProjectsSection() {
                 md:col-span-6
                 lg:col-span-4
                 md:col-start-1
-                rounded-lg transition-all hover:bg-transparent cursor-pointer relative z-0 
+                rounded-xl transition-all hover:bg-transparent cursor-pointer bg-[#191919] relative z-0 
               `}
             >
               <div className="flex flex-col gap-4 relative z-0">
@@ -72,7 +72,7 @@ export default function ProjectsSection() {
                 </div>
                 <div className="flex flex-col relative px-4 z-0">
                   <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-md font-['Poppins'] font-semibold text-white group-hover:underline relative z-0">
+                    <h3 className="text-md font-['Poppins'] font-semibold text-[#CBFFFE] group-hover:underline relative z-0">
                       {project.title}
                     </h3>
                     <span className="text-sm font-['Syne'] -mt-2 text-zinc-400">
