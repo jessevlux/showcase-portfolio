@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import BackBtn from "@/components/backbtn";
+import Carousel from "@/components/carousel";
 
 import img1 from "../../../public/1.svg";
 import img2 from "../../../public/2.svg";
@@ -17,7 +16,6 @@ import img8 from "../../../public/8.svg";
 import img9 from "../../../public/9.svg";
 import img10 from "../../../public/10.svg";
 import img11 from "../../../public/11.svg";
-import Carousel from "@/components/carousel";
 
 const images = [
   img1,
@@ -34,23 +32,9 @@ const images = [
 ];
 
 export default function Home() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const getImageIndex = (offset: number) => {
-    return (currentIndex + offset + images.length) % images.length;
-  };
+  // We're keeping useState even though we don't use it in this component
+  // because we might want to add functionality later
+  const [currentIndex] = useState(0);
 
   return (
     <main className="w-full overflow-hidden min-h-screen relative">
@@ -79,18 +63,18 @@ export default function Home() {
             A clothing brand for the festival community
           </p>
         </div>
-        <div className="absolute bottom-8  transform -translate-x-1/2 z-20 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
           <button
             onClick={() =>
               window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
             }
             aria-label="Scroll down"
-            className="text-white hover:text-[#4fb1c4] transition-colors bg-black/50 p-2 rounded-full"
+            className="text-white hover:text-white/80 transition-colors bg-black/50 p-2 rounded-full"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="30"
+              height="30"
               fill="currentColor"
               viewBox="0 0 16 16"
               className="animate-fadeIn animation-delay-500"

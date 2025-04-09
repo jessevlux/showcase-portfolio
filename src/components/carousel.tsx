@@ -113,7 +113,7 @@ export default function Carousel() {
         emblaApi.off("scroll", onScroll);
       }
     };
-  }, [emblaApi, handleLoop, images.length, selectedIndex]);
+  }, [emblaApi, handleLoop, selectedIndex]);
 
   const scrollTo = useCallback(
     (index: number) => {
@@ -131,21 +131,6 @@ export default function Carousel() {
     const logicalIndex =
       (((physicalIndex - 3) % images.length) + images.length) % images.length;
     const isActive = logicalIndex === selectedIndex;
-
-    // Handle directional animation
-    let direction = 0;
-    if (isTransitioning) {
-      // Calculate the shortest path between previous and current index
-      const diff = selectedIndex - prevIndex;
-      if (diff !== 0) {
-        // Handle wrap-around cases
-        if (Math.abs(diff) > images.length / 2) {
-          direction = diff > 0 ? -1 : 1;
-        } else {
-          direction = diff > 0 ? 1 : -1;
-        }
-      }
-    }
 
     return {
       opacity: isActive ? 1 : 0.4,
