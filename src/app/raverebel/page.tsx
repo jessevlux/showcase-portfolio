@@ -1,41 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import BackBtn from "@/components/backbtn";
 import Carousel from "@/components/carousel";
 
-import img1 from "../../../public/1.svg";
-import img2 from "../../../public/2.svg";
-import img3 from "../../../public/3.svg";
-import img4 from "../../../public/4.svg";
-import img5 from "../../../public/5.svg";
-import img6 from "../../../public/6.svg";
-import img7 from "../../../public/7.svg";
-import img8 from "../../../public/8.svg";
-import img9 from "../../../public/9.svg";
-import img10 from "../../../public/10.svg";
-import img11 from "../../../public/11.svg";
-
-const images = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-];
-
 export default function Home() {
-  // We're keeping useState even though we don't use it in this component
-  // because we might want to add functionality later
-  const [currentIndex] = useState(0);
-
   return (
     <main className="w-full overflow-hidden min-h-screen relative">
       <BackBtn />

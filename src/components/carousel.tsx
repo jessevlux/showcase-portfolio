@@ -21,7 +21,6 @@ const images = [
 
 export default function Carousel() {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Add duplicates to the beginning and end for smoother looping
@@ -68,7 +67,7 @@ export default function Carousel() {
       const targetIndex = currIndex - images.length;
       emblaApi.scrollTo(targetIndex, false); // Jump without animation
     }
-  }, [emblaApi, extendedImages.length, images.length]);
+  }, [emblaApi, extendedImages.length]);
 
   // Handle carousel scroll events
   useEffect(() => {
@@ -76,7 +75,7 @@ export default function Carousel() {
 
     const onSelect = () => {
       const physicalIdx = emblaApi.selectedScrollSnap();
-      setPrevIndex(selectedIndex);
+      // We don't need to track previous index since we removed the directional animation
       setSelectedIndex(getLogicalIndex(physicalIdx));
     };
 

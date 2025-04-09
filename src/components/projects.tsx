@@ -48,7 +48,7 @@ export default function ProjectsSection() {
           PROJECTS
         </h2>
         <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div
               key={project.title}
               onClick={() => router.push(project.path)}
