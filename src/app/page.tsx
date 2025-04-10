@@ -231,7 +231,7 @@ export default function Home() {
         id="contact"
       >
         <div className="container mx-auto px-4 md:px-[70px] relative z-0">
-          <h2 className=" pt-16 text-left text-2xl font-['Poppins'] font-semibold tracking-wider text-white relative z-0">
+          <h2 className=" pt-14 text-left text-2xl font-['Poppins'] font-semibold tracking-wider text-white relative z-0">
             CONTACT
           </h2>
           <p className="text-white text-md font-['Poppins']">
@@ -255,7 +255,7 @@ export default function Home() {
               jessevanluxemburg@outlook.com
             </span>
             <br></br>
-            <span className="flex items-center text-white gap-3">
+            <span className="flex items-center text-white gap-3 -mt-2">
               <svg
                 className="text-[#4fb1c4]"
                 xmlns="http://www.w3.org/2000/svg"

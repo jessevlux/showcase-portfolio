@@ -10,7 +10,7 @@ export default function ProjectsSection() {
     {
       title: "RAVEREBEL",
       description: "Designing my own clothing that's related to festivals.",
-      image: "/raverebel1.png",
+      image: "/raverebel.svg",
       date: "05-2024",
       tags: ["Design"],
       path: "/raverebel",
@@ -18,7 +18,7 @@ export default function ProjectsSection() {
     {
       title: "UPENDO",
       description: "Client group project for 2manydots.",
-      image: "/upendo.png",
+      image: "/upendo.svg",
       date: "09-2024",
       tags: ["UI/UX Design", "Web Development"],
       path: "/upendo",
@@ -26,7 +26,7 @@ export default function ProjectsSection() {
     {
       title: "MARKETING NEWS WEBSITE",
       description: "Client group project for 2manydots.",
-      image: "/aimtoday.png",
+      image: "/aimtoday.svg",
       date: "11-2024",
       tags: ["UI/UX Design", "Web Development", "Branding"],
       path: "/aimtoday",
@@ -34,7 +34,7 @@ export default function ProjectsSection() {
     {
       title: "BEFIT",
       description: "Mobile app that combines social media and fitness.",
-      image: "/befit.png",
+      image: "/befit.svg",
       date: "01-2025",
       tags: ["UI/UX Design", "Mobile App"],
       path: "/befit",
@@ -72,21 +72,21 @@ export default function ProjectsSection() {
                 </div>
                 <div className="flex flex-col relative px-4 z-0">
                   <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-md font-['Poppins'] font-semibold text-[#CBFFFE] group-hover:underline relative z-0">
+                    <h3 className="text-md font-['Poppins'] font-semibold text-[#4fb1c4] group-hover:underline relative z-0">
                       {project.title}
                     </h3>
-                    <span className="text-sm font-['Syne'] -mt-2 text-zinc-400">
+                    <span className="text-sm font-['Syne'] -mt-2 text-[#505050]">
                       {project.date}
                     </span>
                   </div>
-                  <p className="text-sm text-white/80 -mt-1 font-regular font-['Poppins'] relative z-0">
+                  <p className="text-sm text-white/60 -mt-1 font-regular font-['Poppins'] relative z-0">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-3 mb-3">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-4 h-[30px] mb-1 leading-[30px] bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] font-regular rounded-full"
+                        className="px-4 h-[30px] mb-1 leading-[30px] bg-[#0e0e0e] text-white text-sm font-['Syne'] font-regular rounded-full"
                       >
                         {tag}
                       </span>

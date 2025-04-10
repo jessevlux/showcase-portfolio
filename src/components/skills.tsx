@@ -14,6 +14,10 @@ export default function SkillsSection() {
     { name: "Next.js", category: "React Framework", icon: "/nextjs.svg" },
     { name: "Tailwind", category: "CSS Framework", icon: "/tailwind.svg" },
     { name: "GIT", category: "Version control", icon: "/git.svg" },
+    { name: "Storyblok", category: "Headless CMS", icon: "/storyblok.svg" },
+    { name: "Cursor", category: "AI code-editor", icon: "/cursor.svg" },
+    { name: "Typescript", category: "Development", icon: "/typescript.svg" },
+    { name: "ChatGPT", category: "AI tool", icon: "/chatgpt.svg" },
   ];
 
   return (
@@ -60,7 +64,7 @@ export default function SkillsSection() {
                   <h3 className="text-sm font-['Poppins'] font-regular text-white relative z-0">
                     {skill.name}
                   </h3>
-                  <p className="text-xs font-['Syne'] text-zinc-400 relative z-0">
+                  <p className="text-xs font-['Syne'] text-[#434343] relative z-0">
                     {skill.category}
                   </p>
                 </div>
@@ -91,7 +95,7 @@ export default function SkillsSection() {
                   <h3 className="text-md font-['Poppins'] font-regular text-white relative z-0">
                     {skill.name}
                   </h3>
-                  <p className="text-sm font-['Syne'] text-zinc-400 relative z-0">
+                  <p className="text-sm font-['Syne'] text-[#505050] relative z-0">
                     {skill.category}
                   </p>
                 </div>
