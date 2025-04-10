@@ -52,7 +52,7 @@ export default function Home() {
                 }}
                 className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-colors"
               >
-                About
+                ABOUT
               </button>
               {/* Projects button */}
               <button
@@ -63,7 +63,7 @@ export default function Home() {
                 }}
                 className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-colors"
               >
-                Projects
+                PROJECTS
               </button>
               {/* Contact button */}
               <button
@@ -74,7 +74,7 @@ export default function Home() {
                 }}
                 className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-colors"
               >
-                Contact
+                CONTACT
               </button>
             </div>
           </div>
@@ -236,7 +236,7 @@ export default function Home() {
           </h2>
           <p className="text-white text-md font-['Poppins']">
             <br></br>
-            <span className="flex items-center text-white gap-3">
+            <span className="flex items-center text-white/80 gap-3">
               <svg
                 className="text-[#4fb1c4]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -255,7 +255,7 @@ export default function Home() {
               jessevanluxemburg@outlook.com
             </span>
             <br></br>
-            <span className="flex items-center text-white gap-3 -mt-2">
+            <span className="flex items-center text-white/80 gap-3 -mt-2">
               <svg
                 className="text-[#4fb1c4]"
                 xmlns="http://www.w3.org/2000/svg"

@@ -2,54 +2,74 @@
 
 import BackBtn from "@/components/backbtn";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+
+const screenshots = [
+  { src: "/upendo/H.svg", alt: "Upendo Data View" },
+  { src: "/upendo/blokje1.svg", alt: "Upendo UI Component 1" },
+  { src: "/upendo/blokje1-1.svg", alt: "Upendo UI Component 2" },
+  { src: "/upendo/blokje2.svg", alt: "Upendo Feature Block 1" },
+  { src: "/upendo/A.svg", alt: "Upendo Hero Section" },
+  { src: "/upendo/blokje2-1.svg", alt: "Upendo Feature Block 2" },
+  { src: "/upendo/textv5.svg", alt: "Upendo Text Component" },
+  { src: "/upendo/G.svg", alt: "Upendo Dashboard" },
+  { src: "/upendo/blokje3.svg", alt: "Upendo Service Card 1" },
+  { src: "/upendo/blokje3-1.svg", alt: "Upendo Service Card 2" },
+  { src: "/upendo/L.svg", alt: "Upendo Layout Element" },
+  { src: "/upendo/I.svg", alt: "Upendo Interface" },
+  { src: "/upendo/packagev1.3.svg", alt: "Upendo Package Display" },
+  { src: "/upendo/blokje3-2.svg", alt: "Upendo Service Card 3" },
+  { src: "/upendo/blokje1-2.svg", alt: "Upendo UI Component 3" },
+  { src: "/upendo/blokje2-2.svg", alt: "Upendo Feature Block 3" },
+  { src: "/upendo/textv7.svg", alt: "Upendo Text Component 2" },
+  { src: "/upendo/J.svg", alt: "Upendo Navigation" },
+  { src: "/upendo/abilitiesv1.svg", alt: "Upendo Abilities Section" },
+  { src: "/upendo/K.svg", alt: "Upendo UI Element" },
+];
 
 export default function Home() {
+  const [hoveredImage, setHoveredImage] = useState<string | null>(null);
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    if (hoveredImage) {
+      // Set fadeIn to true after a small delay to trigger animation
+      const timer = setTimeout(() => setFadeIn(true), 50);
+      return () => clearTimeout(timer);
+    } else {
+      setFadeIn(false);
+    }
+  }, [hoveredImage]);
+
+  // Function to handle showing the full image
+  const handleShowImage = (src: string) => {
+    setHoveredImage(src);
+  };
+
+  // Function to handle closing the image overlay
+  const handleCloseImage = () => {
+    setFadeIn(false);
+    setTimeout(() => setHoveredImage(null), 300); // Match the transition duration
+  };
+
   return (
     <main className="w-full relative min-h-screen overflow-hidden">
       <BackBtn />
 
       {/* Hero Section with Mockup Image */}
-      <section className="relative w-full h-[60vh] md:h-[100vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[60vh]  flex items-end justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="relative w-full h-full">
             <Image
-              src="/upendo.png"
+              src="/upendo.svg"
               alt="Upendo mockup"
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
               priority
               className="animate-fadeIn"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/75 "></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/30 "></div>
           </div>
-        </div>
-        <div className="relative z-20 text-center p-6">
-          <h1 className="font-['Syne'] font-extrabold text-4xl md:text-5xl text-white mb-4 animate-slideUp">
-            UPENDO
-          </h1>
-          <p className="text-white/80 max-w-2xl mx-auto font-['Syne'] text-lg md:text-xl animate-slideUp animation-delay-200">
-            Client group project for 2manydots
-          </p>
-        </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-          <button
-            onClick={() =>
-              window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-            }
-            aria-label="Scroll down"
-            className="text-white hover:text-white/80 transition-colors bg-black/50 p-2 rounded-full"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="currentColor"
-              viewBox="0 0 16 16"
-              className="animate-fadeIn animation-delay-500"
-            >
-              <path d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
-            </svg>
-          </button>
         </div>
       </section>
 
@@ -63,68 +83,106 @@ export default function Home() {
             </h3>
             <p className="text-white/80 font-['Poppins'] text-sm mb-2 md:text-base leading-relaxed">
               Upendo is a group project we did for 2manydots. 2manydots wanted
-              to create a new company where you can get clear insights and data
-              for your own website. {"We've"} created the website that shows all
-              of
-              {"Upendo's"} services.
+              to create a new company where the user can get clear insights and
+              data for their own website. {"We've"} created the website that
+              shows all of
+              {" Upendo's"} services.
             </p>
             <p className="text-white/80 font-['Poppins'] text-sm md:text-base leading-relaxed">
-              I participated in the UI/UX design and the frontend development.
+              I participated in the UI/UX design and the front-end development.
             </p>
           </div>
-          <div className="bg-[#191919] p-8 rounded-lg">
-            <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
-              <Image
-                src="/upendo2.png"
-                alt="Upendo logo"
-                fill
-                style={{ objectFit: "contain", objectPosition: "center" }}
-              />
+          <div className="md:col-span-1 bg-[#191919] p-8 rounded-lg">
+            <h3 className="font-['Poppins'] font-semibold text-xl text-white mb-4">
+              Skills Used
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                Figma
+              </span>
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                Tailwind
+              </span>
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                Next.js
+              </span>
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                TypeScript
+              </span>
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                Storyblok
+              </span>
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                Git
+              </span>
             </div>
           </div>
         </div>
 
         {/* Screenshots Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20 mb-20">
-          <div className="h-72 flex items-center justify-center relative overflow-hidden rounded-lg">
-            <Image
-              src="/upendo.png"
-              alt="Upendo Screenshot 1"
-              width={500}
-              height={500}
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <h2 className="font-['Syne'] font-bold text-3xl text-center text-white mb-12">
+          Component Screenshots
+        </h2>
 
-          <div className="h-72 flex items-center justify-center relative overflow-hidden rounded-lg">
-            <Image
-              src="/upendo2.png"
-              alt="Upendo Screenshot 2"
-              width={500}
-              height={500}
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-10 mb-20">
+          {screenshots.map((image, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-lg transition-all duration-500"
+            >
+              <div
+                className="relative w-full aspect-square bg-[#191919] rounded-lg overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300"
+                onClick={() => handleShowImage(image.src)}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                  className="object-cover object-center hover:scale-105 transition-all duration-500"
+                />
+              </div>
+
+              {/* Overlay for clicked image */}
+              {hoveredImage === image.src && (
+                <div
+                  className={`fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 cursor-pointer transition-opacity duration-300 ease-in-out ${
+                    fadeIn ? "opacity-100" : "opacity-0"
+                  }`}
+                  onClick={handleCloseImage}
+                >
+                  <div className="relative flex items-center justify-center h-full w-full">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className={`max-w-[70%] max-h-[90vh] object-contain rounded-lg transition-opacity duration-300 ease-in-out ${
+                        fadeIn ? "opacity-100" : "opacity-0"
+                      }`}
+                      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking directly on the image
+                    />
+                    <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm p-2 rounded-full hover:bg-white/20 transition-all">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
-
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-          let lastScrollY = window.scrollY;
-          const nav = document.getElementById('navBtn');
-
-          window.addEventListener('scroll', () => {
-            if (window.scrollY < lastScrollY) { // scrolling up
-              nav.style.opacity = '1';
-            } else { // scrolling down
-              nav.style.opacity = '0';
-            }
-            lastScrollY = window.scrollY;
-          });
-        `,
-        }}
-      />
     </main>
   );
 }

@@ -26,7 +26,7 @@ export default function SkillsSection() {
       <section className="w-full relative z-0">
         <div className="container mx-auto px-4 md:px-[70px] relative z-0">
           <h2 className="mb-6 -mt-3 text-left text-2xl font-['Poppins'] font-bold tracking-wider text-[#4fb1c4] relative z-0">
-            About
+            ABOUT
           </h2>
           <p className="max-w-[500px] col-start-1 -mt-2 text-white text-md font-['Poppins']">
             My name is Jesse van Luxemburg. {"I'm"} a 20 year old student at
@@ -41,7 +41,7 @@ export default function SkillsSection() {
       {/* Skills */}
       <div className="container mx-auto px-4 md:px-[70px] relative z-0">
         <h2 className=" mb-6 mt-8 text-left text-2xl font-['Poppins'] font-bold tracking-wider text-[#4fb1c4] relative z-0">
-          Skills
+          SKILLS
         </h2>
         {/* Mobile view */}
         <div className="grid grid-cols-4 gap-[20px] md:hidden max-w-[1440px] mx-auto relative z-0">

@@ -12,23 +12,23 @@ export default function ProjectsSection() {
       description: "Designing my own clothing that's related to festivals.",
       image: "/raverebel.svg",
       date: "05-2024",
-      tags: ["Design"],
+      tags: ["Design", "Branding", "Marketing"],
       path: "/raverebel",
     },
     {
       title: "UPENDO",
-      description: "Client group project for 2manydots.",
+      description: "Group project for a client (2manydots).",
       image: "/upendo.svg",
       date: "09-2024",
-      tags: ["UI/UX Design", "Web Development"],
+      tags: ["UX/UI Design", "Web Development"],
       path: "/upendo",
     },
     {
       title: "MARKETING NEWS WEBSITE",
-      description: "Client group project for 2manydots.",
+      description: "Group project for a client (2manydots).",
       image: "/aimtoday.svg",
       date: "11-2024",
-      tags: ["UI/UX Design", "Web Development", "Branding"],
+      tags: ["UX/UI Design", "Web Development", "Branding"],
       path: "/aimtoday",
     },
     {
@@ -36,7 +36,7 @@ export default function ProjectsSection() {
       description: "Mobile app that combines social media and fitness.",
       image: "/befit.svg",
       date: "01-2025",
-      tags: ["UI/UX Design", "Mobile App"],
+      tags: ["UX/UI Design", "Mobile App", "Branding"],
       path: "/befit",
     },
   ];
@@ -57,7 +57,7 @@ export default function ProjectsSection() {
                 md:col-span-6
                 lg:col-span-4
                 md:col-start-1
-                rounded-xl transition-all hover:bg-transparent cursor-pointer bg-[#191919] relative z-0 
+                rounded-xl transition-all hover:bg-transparent  cursor-pointer bg-[#191919] relative z-0 
               `}
             >
               <div className="flex flex-col gap-4 relative z-0">
@@ -72,7 +72,7 @@ export default function ProjectsSection() {
                 </div>
                 <div className="flex flex-col relative px-4 z-0">
                   <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-md font-['Poppins'] font-semibold text-[#4fb1c4] group-hover:underline relative z-0">
+                    <h3 className="text-md font-['Poppins'] font-medium text-[#ACFFFD] group-hover:underline relative z-0">
                       {project.title}
                     </h3>
                     <span className="text-sm font-['Syne'] -mt-2 text-[#505050]">
