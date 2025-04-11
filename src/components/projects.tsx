@@ -49,7 +49,7 @@ export default function ProjectsSection() {
       path: "/footballcoach",
     },
     {
-      title: "UX/UI LEARNING TOOL",
+      title: "UX/UI LEARNING TOOL (in progress)",
       description:
         "An interactive platform for learning UX/UI design principles",
       image: "/uxui-2.svg",
