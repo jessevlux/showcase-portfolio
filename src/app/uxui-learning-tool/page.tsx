@@ -37,7 +37,7 @@ export default function Home() {
               src="/uxui-3.svg"
               alt="UX/UI Learning Tool mockup"
               fill
-              style={{ objectFit: "cover", objectPosition: "top" }}
+              style={{ objectFit: "cover", objectPosition: "center" }}
               priority
               className="animate-fadeIn"
             />
@@ -49,7 +49,7 @@ export default function Home() {
                 UX/UI LEARNING TOOL
               </h1>
               <p className="text-white max-w-2xl mx-auto font-['Syne'] text-lg animate-slideUp animation-delay-200">
-                A platform for users to learn UX/UI design principles
+                A platform for the user to learn UX/UI design principles
               </p>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function Home() {
           <div className="md:col-span-1 bg-[#191919] p-8 rounded-lg flex flex-col justify-between">
             <div>
               <h3 className="font-['Poppins'] font-semibold text-xl text-white mb-4">
-                Skills Used
+                Included
               </h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
@@ -115,7 +115,7 @@ export default function Home() {
                   />
                 </a>
                 <a
-                  href="https://ux-learning-tool.vercel.app/"
+                  href="https://uxui-learningtool.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-2 bg-[#0e0e0e] text-white hover:bg-[#4fb1c4] transition-colors duration-300 text-sm font-['Syne'] rounded-full"

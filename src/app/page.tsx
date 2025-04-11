@@ -3,6 +3,7 @@
 // Importing necessary components and assets
 import SkillsSection from "@/components/skills";
 import ProjectsSection from "@/components/projects";
+import ScrollRestorer from "@/components/ScrollRestorer";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
@@ -32,6 +33,7 @@ export default function Home() {
 
   return (
     <main className="w-full overflow-hidden relative">
+      <ScrollRestorer />
       {/* Navigation */}
       <div
         ref={navRef}
