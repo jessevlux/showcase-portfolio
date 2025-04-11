@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
+import { useDotButtons } from "@/hooks/useDotButtons";
 
 const images = [
   "/1.svg",
@@ -44,13 +45,13 @@ export default function Carousel() {
     [autoplayOptions]
   );
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
+  const {
+    scrollPrev,
+    scrollNext,
+    selectedIndex: dotSelectedIndex,
+    scrollSnaps,
+    onDotButtonClick,
+  } = useDotButtons(emblaApi);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;

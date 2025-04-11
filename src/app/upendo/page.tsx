@@ -61,12 +61,11 @@ export default function Home() {
         <div className="absolute inset-0 z-0 group">
           <div className="relative w-full h-full">
             <Image
-              src="/upendo.svg"
-              alt="Upendo mockup"
-              fill
-              style={{ objectFit: "cover", objectPosition: "center" }}
-              priority
-              className="animate-fadeIn"
+              src="/upendo/upendo.svg"
+              alt="Upendo Logo"
+              width={500}
+              height={500}
+              className="w-full h-auto"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/30"></div>
           </div>
