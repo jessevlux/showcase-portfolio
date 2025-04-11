@@ -31,6 +31,7 @@ export default function ProjectsSection() {
       tags: ["UX/UI Design", "Web Development", "Branding"],
       path: "/aimtoday",
     },
+
     {
       title: "BEFIT",
       description: "Mobile app that combines social media and fitness.",
@@ -38,6 +39,23 @@ export default function ProjectsSection() {
       date: "01-2025",
       tags: ["UX/UI Design", "Mobile App", "Branding"],
       path: "/befit",
+    },
+    {
+      title: "FOOTBALLCOACH",
+      description: "A platform for football coaches to manage their teams.",
+      image: "/footballcoach.svg",
+      date: "03-2025",
+      tags: ["UX/UI Design", "Web Development"],
+      path: "/footballcoach",
+    },
+    {
+      title: "UX/UI LEARNING TOOL",
+      description:
+        "An interactive platform for learning UX/UI design principles",
+      image: "/uxui-2.svg",
+      date: "03-2025",
+      tags: ["UX/UI Design", "Web Development", "Education"],
+      path: "/uxui-learning-tool",
     },
   ];
 
@@ -57,7 +75,7 @@ export default function ProjectsSection() {
                 md:col-span-6
                 lg:col-span-4
                 md:col-start-1
-                rounded-xl transition-all hover:bg-transparent  cursor-pointer bg-[#191919] relative z-0 
+                rounded-xl transition-all hover:bg-transparent cursor-pointer bg-[#191919] relative z-0 
               `}
             >
               <div className="flex flex-col gap-4 relative z-0">
@@ -72,7 +90,7 @@ export default function ProjectsSection() {
                 </div>
                 <div className="flex flex-col relative px-4 z-0">
                   <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-md font-['Poppins'] font-medium text-[#ACFFFD] group-hover:underline relative z-0">
+                    <h3 className="text-md font-['Poppins'] font-medium text-[#ACFFFD]  group-hover:underline relative z-0">
                       {project.title}
                     </h3>
                     <span className="text-sm font-['Syne'] -mt-2 text-[#505050]">

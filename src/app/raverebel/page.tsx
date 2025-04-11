@@ -3,15 +3,36 @@
 import Image from "next/image";
 import BackBtn from "@/components/backbtn";
 import Carousel from "@/components/carousel";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [showBackBtn, setShowBackBtn] = useState(true);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      if (window.scrollY < lastScrollY) {
+        // scrolling up
+        setShowBackBtn(true);
+      } else {
+        // scrolling down
+        setShowBackBtn(false);
+      }
+      lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main className="w-full overflow-hidden min-h-screen relative">
-      <BackBtn />
+      <BackBtn show={showBackBtn} />
 
       {/* Hero Section with Mockup Image */}
-      <section className="relative w-full h-[60vh] md:h-[100vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0 group">
           <div className="relative w-full h-full">
             <Image
               src="/mockup.png"
@@ -21,36 +42,19 @@ export default function Home() {
               priority
               className="animate-fadeIn"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/75 "></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/20"></div>
           </div>
-        </div>
-        <div className="relative z-20 text-center p-6">
-          <h1 className="font-['Syne'] font-extrabold text-4xl md:text-5xl text-white mb-4 animate-slideUp">
-            RAVEREBEL
-          </h1>
-          <p className="text-white/80 max-w-2xl mx-auto font-['Syne'] text-lg md:text-xl animate-slideUp animation-delay-200">
-            A clothing brand for the festival community
-          </p>
-        </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-          <button
-            onClick={() =>
-              window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-            }
-            aria-label="Scroll down"
-            className="text-white hover:text-[#4fb1c4] transition-colors bg-black/50 p-2 rounded-full"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="currentColor"
-              viewBox="0 0 16 16"
-              className="animate-fadeIn animation-delay-500"
-            >
-              <path d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
-            </svg>
-          </button>
+          <div className="absolute inset-0 z-20 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative z-10 text-center">
+              <h1 className="font-['Syne'] font-extrabold text-4xl md:text-5xl mt-10 text-white mb-4 animate-slideUp">
+                RAVEREBEL
+              </h1>
+              <p className="text-white max-w-2xl mx-auto font-['Syne'] text-lg md:text-xl animate-slideUp animation-delay-200">
+                A clothing brand for the festival community
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -62,13 +66,13 @@ export default function Home() {
             <h3 className="font-['Poppins'] font-semibold text-xl text-white mb-4">
               What is RaveRebel?
             </h3>
-            <p className="text-white/80 font-['Poppins'] text-sm mb-2 md:text-base leading-relaxed">
+            <p className="text-white/70 font-['Poppins'] text-sm mb-2 md:text-base leading-relaxed">
               RaveRebel is a clothing brand I created with the aim of appealing
               to the festival community, particularly those into the harder
               styles. From stylish designs to ones with a message, there are
               multiple options for different people attending festivals.
             </p>
-            <p className="text-white/80 font-['Poppins'] text-sm md:text-base leading-relaxed">
+            <p className="text-white/70 font-['Poppins'] text-sm md:text-base leading-relaxed">
               When I attend festivals, I often see people wearing clothing from
               their own festival related brands. This always seemed like a cool
               idea to me. I had the chance to create my own project at school,
@@ -76,14 +80,20 @@ export default function Home() {
               into this project.
             </p>
           </div>
-          <div className="bg-[#191919] p-8 rounded-lg">
-            <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
-              <Image
-                src="/raverebel.png"
-                alt="RaveRebel"
-                fill
-                style={{ objectFit: "cover", objectPosition: "center" }}
-              />
+          <div className="md:col-span-1 bg-[#191919] p-8 rounded-lg">
+            <h3 className="font-['Poppins'] font-semibold text-xl text-white mb-4">
+              Included
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                Figma
+              </span>
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                Photoshop
+              </span>
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                Adobe Firefly
+              </span>
             </div>
           </div>
         </div>
@@ -92,7 +102,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20">
           <div className="h-72 flex items-center justify-center relative overflow-hidden rounded-lg">
             <Image
-              src="/v8 mockup_front.png"
+              src="/v8 mockup_front.svg"
               alt="Design 1 - V8 Front"
               width={500}
               height={500}
@@ -102,7 +112,7 @@ export default function Home() {
 
           <div className="h-72 flex items-center justify-center relative overflow-hidden rounded-lg">
             <Image
-              src="/v8 mockup_back.png"
+              src="/v8 mockup_back.svg"
               alt="Design 2 - V8 Back"
               width={500}
               height={500}
@@ -113,24 +123,6 @@ export default function Home() {
       </section>
 
       <Carousel />
-
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-          let lastScrollY = window.scrollY;
-          const nav = document.getElementById('navBtn');
-
-          window.addEventListener('scroll', () => {
-            if (window.scrollY < lastScrollY) { // scrolling up
-              nav.style.opacity = '1';
-            } else { // scrolling down
-              nav.style.opacity = '0';
-            }
-            lastScrollY = window.scrollY;
-          });
-        `,
-        }}
-      />
     </main>
   );
 }

@@ -57,8 +57,8 @@ export default function Home() {
       <BackBtn />
 
       {/* Hero Section with Mockup Image */}
-      <section className="relative w-full h-[60vh]  flex items-end justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0 group">
           <div className="relative w-full h-full">
             <Image
               src="/upendo.svg"
@@ -68,7 +68,18 @@ export default function Home() {
               priority
               className="animate-fadeIn"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/30 "></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/30"></div>
+          </div>
+          <div className="absolute inset-0 z-20 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative z-10 text-center">
+              <h1 className="font-['Syne'] font-extrabold text-3xl md:text-5xl mt-10 text-white mb-4 animate-slideUp">
+                UPENDO
+              </h1>
+              <p className="text-white max-w-2xl mx-auto font-['Syne'] text-lg animate-slideUp animation-delay-200">
+                Client group project for 2manydots
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -81,20 +92,21 @@ export default function Home() {
             <h3 className="font-['Poppins'] font-semibold text-xl text-white mb-4">
               What is Upendo?
             </h3>
-            <p className="text-white/80 font-['Poppins'] text-sm mb-2 md:text-base leading-relaxed">
+            <p className="text-white/70 font-['Poppins'] text-sm mb-2 md:text-base leading-relaxed">
               Upendo is a group project we did for 2manydots. 2manydots wanted
               to create a new company where the user can get clear insights and
               data for their own website. {"We've"} created the website that
               shows all of
-              {" Upendo's"} services.
+              {" Upendo's"} services. <br></br>For this project, the client
+              already had a brandguide for us to use.
             </p>
-            <p className="text-white/80 font-['Poppins'] text-sm md:text-base leading-relaxed">
-              I participated in the UI/UX design and the front-end development.
+            <p className="text-white/70 font-['Poppins'] text-sm md:text-base leading-relaxed">
+              I participated in the UX/UI design and the front-end development.
             </p>
           </div>
           <div className="md:col-span-1 bg-[#191919] p-8 rounded-lg">
             <h3 className="font-['Poppins'] font-semibold text-xl text-white mb-4">
-              Skills Used
+              Included
             </h3>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
@@ -108,12 +120,6 @@ export default function Home() {
               </span>
               <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
                 TypeScript
-              </span>
-              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
-                Storyblok
-              </span>
-              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
-                Git
               </span>
             </div>
           </div>
