@@ -70,7 +70,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className="w-full bg-gradient-to-b from-black/55 to-[#0e0e0e]">
+    <div className="w-full bg-[#121212]">
       <section className="relative w-full flex items-center justify-center overflow-hidden pt-12 mt-20">
         <div className="relative z-20 text-center">
           <h2 className="font-['Syne'] font-extrabold text-2xl md:text-3xl mb-10 text-white">

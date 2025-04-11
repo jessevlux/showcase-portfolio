@@ -12,6 +12,7 @@ export default function Home() {
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Navigation scroll handler
     let lastScrollTop = 0;
     const handleScroll = () => {
       if (navRef.current) {
@@ -27,8 +28,32 @@ export default function Home() {
       }
     };
 
+    // Scroll animation observer with increased threshold
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Increased threshold for better scroll trigger
+        rootMargin: "-50px 0px", // Add some margin to prevent premature triggering
+      }
+    );
+
+    // Observe sections
+    const sections = document.querySelectorAll(
+      ".about-section, .skills-section, .projects-section"
+    );
+    sections.forEach((section) => observer.observe(section));
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -48,33 +73,45 @@ export default function Home() {
               {/* About button */}
               <button
                 onClick={() => {
-                  document
-                    .getElementById("skills")
-                    ?.scrollIntoView({ behavior: "smooth" });
+                  const element = document.getElementById("skills");
+                  if (element) {
+                    element.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
                 }}
-                className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-colors"
+                className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-all duration-300 hover:scale-105"
               >
                 ABOUT
               </button>
               {/* Projects button */}
               <button
                 onClick={() => {
-                  document
-                    .getElementById("projects")
-                    ?.scrollIntoView({ behavior: "smooth" });
+                  const element = document.getElementById("projects");
+                  if (element) {
+                    element.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
                 }}
-                className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-colors"
+                className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-all duration-300 hover:scale-105"
               >
                 PROJECTS
               </button>
               {/* Contact button */}
               <button
                 onClick={() => {
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" });
+                  const element = document.getElementById("contact");
+                  if (element) {
+                    element.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
                 }}
-                className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-colors"
+                className="text-white font-['Poppins'] text-xs md:text-base font-semibold w-[80px] md:w-[120px] py-2 rounded-lg hover:text-[#4fb1c4] transition-all duration-300 hover:scale-105"
               >
                 CONTACT
               </button>
@@ -179,12 +216,12 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Scroll down button - positioned absolutely relative to the home section */}
+        {/* Scroll down button */}
         <div className="absolute bottom-8 transform -translate-x-1/2 z-20 animate-bounce">
           <button
-            onClick={() =>
-              window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-            }
+            onClick={() => {
+              window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+            }}
             aria-label="Scroll down"
             className="text-white hover:text-[#4fb1c4] transition-colors bg-black/50 p-2 rounded-full"
           >
@@ -212,11 +249,15 @@ export default function Home() {
         }}
       />
 
-      {/* Skills section */}
-      <SkillsSection />
+      {/* About section */}
+      <section id="skills" className="about-section">
+        <SkillsSection />
+      </section>
 
       {/* Projects section */}
-      <ProjectsSection />
+      <section id="projects" className="projects-section">
+        <ProjectsSection />
+      </section>
 
       {/* Line separator */}
       <div
@@ -227,17 +268,18 @@ export default function Home() {
           opacity: 0,
         }}
       />
+
       {/* Contact section */}
       <section
-        className="w-full relative pb-12 z-0 bg-gradient-to-b from-[#121212] to-[#4fb1c4]/50"
+        className="w-full relative pb-12 z-0 bg-gradient-to-b from-[#0f0f0f] to-[#4fb1c4]/15"
         id="contact"
       >
         <div className="container mx-auto px-4 md:px-[70px] relative z-0">
-          <h2 className=" pt-14 text-left text-2xl font-['Poppins'] font-semibold tracking-wider text-white relative z-0">
+          <h2 className="pt-14 text-left text-2xl font-['Poppins'] font-semibold tracking-wider text-white relative z-0">
             CONTACT
           </h2>
           <p className="text-white text-md font-['Poppins']">
-            <br></br>
+            <br />
             <span className="flex items-center text-white/80 gap-3">
               <svg
                 className="text-[#4fb1c4]"
@@ -256,7 +298,7 @@ export default function Home() {
               </svg>
               jessevanluxemburg@outlook.com
             </span>
-            <br></br>
+            <br />
             <span className="flex items-center text-white/80 gap-3 -mt-2">
               <svg
                 className="text-[#4fb1c4]"

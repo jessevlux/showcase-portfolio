@@ -45,7 +45,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/20"></div>
           </div>
           <div className="absolute inset-0 z-20 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10 text-center">
               <h1 className="font-['Syne'] font-extrabold text-4xl md:text-5xl mt-10 text-white mb-4 animate-slideUp">
                 RAVEREBEL

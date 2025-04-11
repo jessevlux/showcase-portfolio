@@ -75,7 +75,8 @@ export default function ProjectsSection() {
                 md:col-span-6
                 lg:col-span-4
                 md:col-start-1
-                rounded-xl transition-all hover:bg-transparent cursor-pointer bg-[#191919] relative z-0 
+                rounded-xl transition-all duration-300 cursor-pointer bg-[#191919] relative z-0
+                hover:scale-[1.035] hover:shadow-lg
               `}
             >
               <div className="flex flex-col gap-4 relative z-0">
