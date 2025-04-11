@@ -42,13 +42,7 @@ export default function Carousel() {
     [autoplayOptions]
   );
 
-  const {
-    scrollPrev,
-    scrollNext,
-    selectedIndex: dotSelectedIndex,
-    scrollSnaps,
-    onDotButtonClick,
-  } = useDotButtons(emblaApi);
+  const { scrollPrev, scrollNext, onDotButtonClick } = useDotButtons(emblaApi);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
