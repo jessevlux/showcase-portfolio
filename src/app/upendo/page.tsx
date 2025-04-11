@@ -157,9 +157,11 @@ export default function Home() {
                   onClick={handleCloseImage}
                 >
                   <div className="relative flex items-center justify-center h-full w-full">
-                    <img
+                    <Image
                       src={image.src}
                       alt={image.alt}
+                      width={1200}
+                      height={800}
                       className={`max-w-[70%] max-h-[90vh] object-contain rounded-lg transition-opacity duration-300 ease-in-out ${
                         fadeIn ? "opacity-100" : "opacity-0"
                       }`}

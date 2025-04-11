@@ -22,9 +22,6 @@ const images = [
 
 export default function Carousel() {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [prevSelectedIndex, setPrevSelectedIndex] = useState(0);
-  const [canScrollPrev, setCanScrollPrev] = useState(true);
-  const [canScrollNext, setCanScrollNext] = useState(true);
 
   const autoplayOptions = Autoplay({
     delay: 4000,
@@ -55,11 +52,8 @@ export default function Carousel() {
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
-    setPrevSelectedIndex(selectedIndex);
     setSelectedIndex(emblaApi.selectedScrollSnap());
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-  }, [emblaApi, selectedIndex]);
+  }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -72,17 +66,11 @@ export default function Carousel() {
     };
   }, [emblaApi, onSelect]);
 
-  const scrollTo = useCallback(
-    (index: number) => emblaApi && emblaApi.scrollTo(index, true),
-    [emblaApi]
-  );
-
   const getSlideStyles = (index: number) => {
     const isActive = index === selectedIndex;
     return {
-      opacity: isActive ? 1 : 0.4,
+      opacity: isActive ? 1 : 0.15,
       zIndex: isActive ? 10 : 5,
-      filter: isActive ? "blur(0px)" : "blur(2px)",
       transform: isActive ? "scale(1.15)" : "scale(1)",
     };
   };
@@ -128,7 +116,7 @@ export default function Carousel() {
               className={`w-2 h-2 rounded-full transition-colors ${
                 index === selectedIndex ? "bg-white" : "bg-white/40"
               }`}
-              onClick={() => scrollTo(index)}
+              onClick={() => onDotButtonClick(index)}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
