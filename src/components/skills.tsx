@@ -30,7 +30,7 @@ export default function SkillsSection() {
           </h2>
           <p className="max-w-[650px] col-start-1 -mt-2 text-white/80 text-md font-['Poppins']">
             My name is Jesse van Luxemburg. {"I'm"} a 20 year old student at
-            Fontys Tilburg (ICT & Media Design). But what makes me special?
+            Fontys Tilburg (ICT & Media Design). But who am I?
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 font-['Poppins'] gap-6 mt-6">
