@@ -62,7 +62,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 mb-16">
           <div className="md:col-span-2 bg-[#191919] p-8 rounded-lg">
             <h3 className="font-['Poppins'] font-semibold text-xl text-white mb-4">
-              What is FootballCoach??
+              What is FootballCoach?
             </h3>
             <p className="text-white/70 font-['Poppins'] text-sm mb-2 md:text-base leading-relaxed">
               FootballCoach is an app with the purpose to make it easier for
