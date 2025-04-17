@@ -113,7 +113,7 @@ export default function Home() {
       </section>
 
       {/* Main Content Section */}
-      <section className="container mx-auto px-4 md:px-[70px]">
+      <section className="container mx-auto px-4 md:px-[70px] mb-8">
         {/* Two Column Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 mb-16">
           <div className="md:col-span-2 bg-[#191919] p-8 rounded-lg">
@@ -158,8 +158,8 @@ export default function Home() {
           Component Screenshotss
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-10 mb-20">
-          {screenshots.map((image, index) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {loadedImages.map((image, index) => (
             <div
               key={index}
               className="group relative overflow-hidden rounded-lg transition-all duration-500"
@@ -222,7 +222,7 @@ export default function Home() {
         </div>
 
         {hasMoreImages && (
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center mt-8 mb-8">
             <button
               onClick={loadMoreImages}
               disabled={isLoading}
