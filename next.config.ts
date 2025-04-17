@@ -13,14 +13,12 @@ const nextConfig: NextConfig = {
     optimizeCss: true,
     scrollRestoration: true,
     optimizePackageImports: ['lucide-react'],
-    serverActions: true,
-    serverComponentsExternalPackages: ['sharp'],
   },
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
   output: 'standalone',
+  serverExternalPackages: ['sharp'],
   async headers() {
     return [
       {
