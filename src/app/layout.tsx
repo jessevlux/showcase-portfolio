@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -56,7 +57,10 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="bg-[#121212] text-white">{children}</body>
+      <body className="bg-[#121212] text-white">
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
