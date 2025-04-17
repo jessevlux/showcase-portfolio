@@ -128,6 +128,9 @@ export default function Home() {
               src="/me.svg"
               alt="Background"
               fill
+              sizes="100vw"
+              priority
+              quality={90}
               style={{ objectFit: "cover", objectPosition: "top" }}
               className="opacity-85"
             />
