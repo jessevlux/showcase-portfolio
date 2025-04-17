@@ -113,9 +113,53 @@ export default function Home() {
       </section>
 
       {/* Main Content Section */}
-      <section className="container mx-auto px-4 md:px-[70px] py-20">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {loadedImages.map((image, index) => (
+      <section className="container mx-auto px-4 md:px-[70px]">
+        {/* Two Column Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 mb-16">
+          <div className="md:col-span-2 bg-[#191919] p-8 rounded-lg">
+            <h3 className="font-['Poppins'] font-semibold text-xl text-white mb-4">
+              What is Upendo?
+            </h3>
+            <p className="text-white/70 font-['Poppins'] text-sm mb-2 md:text-base leading-relaxed">
+              Upendo is a group project we did for 2manydots. 2manydots wanted
+              to create a new company where the user can get clear insights and
+              data for their own website. {"We've"} created the website that
+              shows all of
+              {" Upendo's"} services. <br></br>For this project, the client
+              already had a brandguide for us to use.
+            </p>
+            <p className="text-white/70 font-['Poppins'] text-sm md:text-base leading-relaxed">
+              I participated in the UX/UI design and the front-end development.
+            </p>
+          </div>
+          <div className="md:col-span-1 bg-[#191919] p-8 rounded-lg">
+            <h3 className="font-['Poppins'] font-semibold text-xl text-white mb-4">
+              Included
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                Figma
+              </span>
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                Tailwind
+              </span>
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                Next.js
+              </span>
+              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
+                TypeScript
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Screenshots Section */}
+        <h2 className="font-['Syne'] font-bold text-3xl text-center text-white mb-12">
+          Component Screenshotss
+        </h2>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-10 mb-20">
+          {screenshots.map((image, index) => (
             <div
               key={index}
               className="group relative overflow-hidden rounded-lg transition-all duration-500"
