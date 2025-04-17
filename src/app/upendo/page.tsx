@@ -92,7 +92,7 @@ export default function Home() {
               fill
               sizes="100vw"
               priority
-              quality={90}
+              quality={75}
               style={{ objectFit: "cover", objectPosition: "center" }}
               className="animate-fadeIn transition-opacity duration-300"
             />
@@ -173,7 +173,7 @@ export default function Home() {
                   alt={image.alt}
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
-                  quality={85}
+                  quality={75}
                   className="object-cover object-center hover:scale-105 transition-all duration-500"
                   loading={index < 4 ? "eager" : "lazy"}
                 />
@@ -192,6 +192,7 @@ export default function Home() {
                       alt={image.alt}
                       width={1200}
                       height={800}
+                      quality={75}
                       className={`max-w-[70%] max-h-[90vh] object-contain rounded-lg transition-opacity duration-300 ease-in-out ${
                         fadeIn ? "opacity-100" : "opacity-0"
                       }`}
