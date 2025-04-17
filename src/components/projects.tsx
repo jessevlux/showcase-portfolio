@@ -66,7 +66,7 @@ export default function ProjectsSection() {
           PROJECTS
         </h2>
         <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] max-w-[1440px] mx-auto relative z-0">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <div
               key={project.title}
               onClick={() => router.push(project.path)}
@@ -84,9 +84,12 @@ export default function ProjectsSection() {
                   <Image
                     src={project.image}
                     alt={`${project.title} preview`}
-                    width={400}
-                    height={300}
-                    className="w-full h-full object-cover rounded-xl"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                    priority={index <= 1}
+                    quality={85}
+                    className="w-full h-full object-cover rounded-xl transition-opacity duration-300"
+                    loading={index <= 1 ? "eager" : "lazy"}
                   />
                 </div>
                 <div className="flex flex-col relative px-4 z-0">

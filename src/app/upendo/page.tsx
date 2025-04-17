@@ -64,9 +64,11 @@ export default function Home() {
               src="/upendo.svg"
               alt="Upendo"
               fill
-              style={{ objectFit: "cover", objectPosition: "center" }}
+              sizes="100vw"
               priority
-              className="animate-fadeIn"
+              quality={90}
+              style={{ objectFit: "cover", objectPosition: "center" }}
+              className="animate-fadeIn transition-opacity duration-300"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/30"></div>
           </div>

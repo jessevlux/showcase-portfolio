@@ -37,9 +37,11 @@ export default function Home() {
               src="/footballcoach2.svg"
               alt="FootballCoach mockup"
               fill
-              style={{ objectFit: "cover", objectPosition: "center" }}
+              sizes="100vw"
               priority
-              className="animate-fadeIn"
+              quality={90}
+              style={{ objectFit: "cover", objectPosition: "center" }}
+              className="animate-fadeIn transition-opacity duration-300"
             />
           </div>
           <div className="absolute inset-0 z-20 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

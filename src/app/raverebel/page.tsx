@@ -38,9 +38,11 @@ export default function Home() {
               src="/mockup.png"
               alt="RaveRebel mockup"
               fill
-              style={{ objectFit: "cover", objectPosition: "center" }}
+              sizes="100vw"
               priority
-              className="animate-fadeIn"
+              quality={90}
+              style={{ objectFit: "cover", objectPosition: "center" }}
+              className="animate-fadeIn transition-opacity duration-300"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/20"></div>
           </div>

@@ -93,8 +93,11 @@ export default function Carousel() {
                     src={src}
                     alt={`Design ${index + 1}`}
                     fill
-                    className="object-contain rounded-2xl"
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
                     priority={index <= 2}
+                    quality={85}
+                    className="object-contain rounded-2xl transition-opacity duration-300"
+                    loading={index <= 2 ? "eager" : "lazy"}
                   />
                 </div>
               </div>
