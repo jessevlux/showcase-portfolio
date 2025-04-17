@@ -48,7 +48,6 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        <link rel="preload" href="/me.svg" as="image" type="image/svg+xml" />
       </head>
       <body className="bg-[#121212] text-white">{children}</body>
     </html>
