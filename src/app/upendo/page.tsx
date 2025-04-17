@@ -127,7 +127,7 @@ export default function Home() {
 
         {/* Screenshots Section */}
         <h2 className="font-['Syne'] font-bold text-3xl text-center text-white mb-12">
-          Component Screenshots
+          Component Screenshotss
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-10 mb-20">
