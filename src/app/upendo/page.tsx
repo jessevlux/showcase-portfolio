@@ -27,13 +27,22 @@ const screenshots = [
   { src: "/upendo/K.svg", alt: "Upendo UI Element" },
 ];
 
+const ITEMS_PER_PAGE = 8;
+
 export default function Home() {
   const [hoveredImage, setHoveredImage] = useState<string | null>(null);
   const [fadeIn, setFadeIn] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [loadedImages, setLoadedImages] = useState<typeof screenshots>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    // Load initial batch of images
+    setLoadedImages(screenshots.slice(0, ITEMS_PER_PAGE));
+  }, []);
 
   useEffect(() => {
     if (hoveredImage) {
-      // Set fadeIn to true after a small delay to trigger animation
       const timer = setTimeout(() => setFadeIn(true), 50);
       return () => clearTimeout(timer);
     } else {
@@ -41,16 +50,33 @@ export default function Home() {
     }
   }, [hoveredImage]);
 
-  // Function to handle showing the full image
+  const loadMoreImages = () => {
+    setIsLoading(true);
+    const nextPage = currentPage + 1;
+    const startIndex = (nextPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+
+    // Simulate network delay for smooth loading
+    setTimeout(() => {
+      setLoadedImages((prev) => [
+        ...prev,
+        ...screenshots.slice(startIndex, endIndex),
+      ]);
+      setCurrentPage(nextPage);
+      setIsLoading(false);
+    }, 500);
+  };
+
   const handleShowImage = (src: string) => {
     setHoveredImage(src);
   };
 
-  // Function to handle closing the image overlay
   const handleCloseImage = () => {
     setFadeIn(false);
-    setTimeout(() => setHoveredImage(null), 300); // Match the transition duration
+    setTimeout(() => setHoveredImage(null), 300);
   };
+
+  const hasMoreImages = loadedImages.length < screenshots.length;
 
   return (
     <main className="w-full relative min-h-screen overflow-hidden">
@@ -87,53 +113,9 @@ export default function Home() {
       </section>
 
       {/* Main Content Section */}
-      <section className="container mx-auto px-4 md:px-[70px]">
-        {/* Two Column Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 mb-16">
-          <div className="md:col-span-2 bg-[#191919] p-8 rounded-lg">
-            <h3 className="font-['Poppins'] font-semibold text-xl text-white mb-4">
-              What is Upendo?
-            </h3>
-            <p className="text-white/70 font-['Poppins'] text-sm mb-2 md:text-base leading-relaxed">
-              Upendo is a group project we did for 2manydots. 2manydots wanted
-              to create a new company where the user can get clear insights and
-              data for their own website. {"We've"} created the website that
-              shows all of
-              {" Upendo's"} services. <br></br>For this project, the client
-              already had a brandguide for us to use.
-            </p>
-            <p className="text-white/70 font-['Poppins'] text-sm md:text-base leading-relaxed">
-              I participated in the UX/UI design and the front-end development.
-            </p>
-          </div>
-          <div className="md:col-span-1 bg-[#191919] p-8 rounded-lg">
-            <h3 className="font-['Poppins'] font-semibold text-xl text-white mb-4">
-              Included
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
-                Figma
-              </span>
-              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
-                Tailwind
-              </span>
-              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
-                Next.js
-              </span>
-              <span className="px-3 py-1 bg-[#0e0e0e] text-white/80 text-sm font-['Syne'] rounded-full">
-                TypeScript
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Screenshots Section */}
-        <h2 className="font-['Syne'] font-bold text-3xl text-center text-white mb-12">
-          Component Screenshots
-        </h2>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-10 mb-20">
-          {screenshots.map((image, index) => (
+      <section className="container mx-auto px-4 md:px-[70px] py-20">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {loadedImages.map((image, index) => (
             <div
               key={index}
               className="group relative overflow-hidden rounded-lg transition-all duration-500"
@@ -147,11 +129,12 @@ export default function Home() {
                   alt={image.alt}
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                  quality={85}
                   className="object-cover object-center hover:scale-105 transition-all duration-500"
+                  loading={index < 4 ? "eager" : "lazy"}
                 />
               </div>
 
-              {/* Overlay for clicked image */}
               {hoveredImage === image.src && (
                 <div
                   className={`fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 cursor-pointer transition-opacity duration-300 ease-in-out ${
@@ -168,7 +151,8 @@ export default function Home() {
                       className={`max-w-[70%] max-h-[90vh] object-contain rounded-lg transition-opacity duration-300 ease-in-out ${
                         fadeIn ? "opacity-100" : "opacity-0"
                       }`}
-                      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking directly on the image
+                      onClick={(e) => e.stopPropagation()}
+                      priority
                     />
                     <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm p-2 rounded-full hover:bg-white/20 transition-all">
                       <svg
@@ -192,6 +176,18 @@ export default function Home() {
             </div>
           ))}
         </div>
+
+        {hasMoreImages && (
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={loadMoreImages}
+              disabled={isLoading}
+              className="px-6 py-2 bg-[#191919] text-white rounded-full hover:bg-[#252525] transition-colors duration-300 disabled:opacity-50"
+            >
+              {isLoading ? "Loading..." : "Load More"}
+            </button>
+          </div>
+        )}
       </section>
     </main>
   );
