@@ -36,6 +36,13 @@ export default function RootLayout({
         />
         <link
           rel="preload"
+          href="/me.svg"
+          as="image"
+          type="image/svg+xml"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
           href="/fonts/Syne.woff2"
           as="font"
           type="font/woff2"
