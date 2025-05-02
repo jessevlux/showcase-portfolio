@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import { Syne, Poppins } from "next/font/google";
 
 const syne = Syne({
@@ -64,6 +65,7 @@ export default function RootLayout({
       <body className="bg-[#121212] text-white">
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
