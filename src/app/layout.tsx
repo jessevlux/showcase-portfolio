@@ -25,8 +25,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Jesse van Luxzenburg",
-  description: "Portfolio website of Jesse van Luxzenburg",
+  title: "Jesse van Luxemburg",
+  description: "Portfolio website of Jesse van Luxemburg",
 };
 
 export default function RootLayout({
