@@ -53,8 +53,8 @@ export default function Home() {
               stands for Ads, Insights & Marketing Today.
             </p>
             <p className="text-white/70 font-['Poppins'] text-sm md:text-base leading-relaxed">
-              {"I've"} participated in the branding, UI/UX design and the
-              frontend and the frontend development.
+              {"I've"} participated in the branding, UX/UI design and the
+              front-end development including the storyblok integration.
             </p>
           </div>
           <div className="md:col-span-1 bg-[#191919] p-8 rounded-lg flex flex-col justify-between">
